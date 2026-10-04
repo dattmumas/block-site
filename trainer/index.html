@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI trainer in Block</title>
+<meta name="description" content="The guide to the AI trainer in Block (Pro, iOS 27). It reads your log and proposes the changes you ask for. See what to ask, how each change works, who answers and where your data goes.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#d9d8d2">
+<link rel="canonical" href="https://block.lnkd.world/trainer/">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Block">
+<meta property="og:title" content="A trainer that reads every set">
+<meta property="og:description" content="The AI trainer (Block Pro, iOS 27) reads your log and proposes the changes you ask for. You tap Apply to save each one.">
+<meta property="og:url" content="https://block.lnkd.world/trainer/">
+<meta property="og:image" content="https://block.lnkd.world/assets/og/trainer.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The words Ask the trainer why, tagged Pro and iOS 27, beside the question Can my bench go up next time?, an answer that cites Plotkin 2022, and a proposal for Upper A: Bench Press 3 × 6 from 185 to 190, with Apply and Dismiss.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A trainer that reads every set">
+<meta name="twitter:description" content="The AI trainer (Block Pro, iOS 27) reads your log and proposes the changes you ask for. You tap Apply to save each one.">
+<meta name="twitter:image:alt" content="The words Ask the trainer why, tagged Pro and iOS 27, beside the question Can my bench go up next time?, an answer that cites Plotkin 2022, and a proposal for Upper A: Bench Press 3 × 6 from 185 to 190, with Apply and Dismiss.">
+<meta name="twitter:image" content="https://block.lnkd.world/assets/og/trainer.png">
+<!-- smart-app-banner -->
+<link rel="preload" href="/fonts/Archivo-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/landing.css">
+<link rel="stylesheet" href="/guide.css">
+<script src="/config.js" defer></script>
+<script src="/site.js" defer></script>
+</head>
+<body class="guide">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/"><svg class="logo" viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+    <nav class="links" aria-label="Pages">
+      <a href="/#how">How it works</a>
+      <a href="/progression/">Progression</a>
+      <a href="/plates/">Plates</a>
+      <a href="/trainer/" aria-current="page">AI</a>
+      <a href="/switch/">Switch</a>
+      <a href="/#pro">Pricing</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero guide-hero" aria-labelledby="h-page">
+    <div class="wrap">
+      <nav class="guide-nav" aria-label="AI guides"><span class="gn-label" aria-hidden="true">AI guides</span><span class="gn-links"><a href="/trainer/" aria-current="page">AI trainer</a><a href="/assistants/">Connect an assistant</a><a href="/claude-key/">Your Claude key</a></span></nav>
+      <div class="intro">
+        <h1 id="h-page">A trainer that reads every set <span class="tag">Pro</span><span class="tag">iOS 27</span></h1>
+        <p class="lead">The AI trainer reads your log and proposes what you ask for: a complete program, your next loads or a swap between sets. You tap Apply to save it.</p>
+        <div class="cta" data-store="site-trainer"><span class="soon">Coming soon to the App Store</span></div>
+      </div>
+      <figure class="shot"><div class="frame"><img src="/assets/img/guide/trainer-chat-400.webp" srcset="/assets/img/guide/trainer-chat-400.webp 400w, /assets/img/guide/trainer-chat-800.webp 800w" sizes="(min-width: 1024px) 340px, 320px" width="1320" height="2868" alt="The trainer's chat: the question Build me a six-week strength program with core work, an answer that cites Coleman 2024, Robinson 2024 and Plotkin 2022 with Research under it, and a proposal for Strength foundation, 2 workouts, 6 weeks, 13 lifts, with Review program and Dismiss." fetchpriority="high" decoding="async"></div><figcaption>A program build with its research</figcaption></figure>
+      <nav class="toc" aria-labelledby="h-toc">
+        <h2 id="h-toc">On this page</h2>
+        <ul style="--rows:6">
+          <li><a href="#can">What you can do</a></li>
+          <li><a href="#ask">Things to ask</a></li>
+          <li><a href="#open">Open the trainer</a></li>
+          <li><a href="#build">Build your first program</a></li>
+          <li><a href="#next">Next targets after a session</a></li>
+          <li><a href="#session">During a session</a></li>
+          <li><a href="#plan">Change your plan</a></li>
+          <li><a href="#rules">Your rules and lift notes</a></li>
+          <li><a href="#why">Why it says what it says</a></li>
+          <li><a href="#who">Who answers, and the monthly limit</a></li>
+          <li><a href="#data">Where your data goes</a></li>
+          <li><a href="#faq">Limits and questions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="sec" id="can" aria-labelledby="h-can">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-can">Six jobs for the trainer <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">Each job starts with one message in your own words. A change to your training comes back as a proposal card.</p>
+      </header>
+      <ul class="can">
+        <li><span class="c-title">Build a complete program</span><span class="c-text">Give it your goal, days a week, session length and gym. It starts from the best fit of the 21 programs and swaps the lifts you avoid. Then it proposes the whole training block on weekdays: the workouts, the start day, 1 to 16 weeks, and a deload week when the program has one. For a rolling cycle, it writes the workouts itself. <strong>Review program</strong> lets you edit every workout before you tap <strong>Apply program</strong>.</span></li>
+        <li><span class="c-title">Set your next targets</span><span class="c-text">After you save a session, it reads every set and proposes each lift's next load and reps, with the reason on each line. The app can ask for you: it puts “Set my next targets for Lower A from the session I just saved (Thu 1 Oct).” in the chat. A squat at the top of its reps with RPE to spare can go up 10 to 20&nbsp;lb.</span></li>
+        <li><span class="c-title">Change a session while you lift</span><span class="c-text">Between sets, ask for a lighter day, a swap when the rack is taken, an added lift or a lift taken out. It changes only the sets you have not logged. Ask for the change for today only, or for the workout too.</span></li>
+        <li><span class="c-title">Change workouts and blocks</span><span class="c-text">Swap a lift in the program, or change its sets, reps, rest, warm-ups and target RPE. Move a missed session, add a deload week, change a block's dates or days, or make it a rolling cycle, such as 3 on and 1 off for 8 cycles. It renames, moves, copies and deletes workouts, and renames and deletes folders. It also changes your units, rest, bar and plates, and logs a body measurement.</span></li>
+        <li><span class="c-title">Explain your training</span><span class="c-text">Ask why your bench held, how the week went, which lifts are going up or where your records stand. It reads your sessions, records, weekly totals and sets per muscle, and it answers with your own numbers and dates.</span></li>
+        <li><span class="c-title">Remember you</span><span class="c-text">It keeps a rules file on you: goals, preferences, limits and a line per lift. It follows the file in every answer and writes its own note on a lift after a session. You can edit the rules file and read its lift notes, and you write lift notes of your own. When you change the file, the trainer follows your version.</span></li>
+      </ul>
+      <div class="copy also">
+        <p>Every recommendation names its research, for example (Schoenfeld 2017), and you can open the paper. With Claude, it can also search the web and list its sources. It answers how-to questions about the Block app from the app's help. It gives no medical advice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ask" aria-labelledby="h-ask">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-ask">Ask it as you ask a coach</h2>
+        <p class="lead">Type in your own words. Each request below shows what comes back.</p>
+      </header>
+      <ul class="asks">
+        <li><p class="q">Build me a 4&#8209;day program for a 500&nbsp;lb deadlift in 16 weeks.</p><p class="a">It starts from a 4&#8209;day strength program and sets it to 16 weeks with a deload week. <strong>Review program</strong> opens it, and <strong>Apply program</strong> saves the training block.</p></li>
+        <li><p class="q">Set my next targets for Lower A.</p><p class="a">It reads the last Lower A session set by set. The card has one line per lift, with the change and its reason: Back Squat 3 × 8 at 185 → 3 × 8 at 195, after 3 good lifts at RPE 7. <strong>Apply workout</strong>, in its review, saves them.</p></li>
+        <li><p class="q">Why did my bench hold?</p><p class="a">It names the set that missed and the lamp that went red, with the load and the reps. Nothing changes.</p></li>
+        <li><p class="q">I'm about to lift Upper B. I slept 4 hours, so go lighter today.</p><p class="a">A card, <strong>Upper B: start now</strong>, lists every lift at today's loads. <strong>Start session</strong> opens it. The workout keeps its own numbers.</p></li>
+        <li><p class="q">The leg press is taken. Swap it for today.</p><p class="a">In a session, it proposes a lift for the same sets, reps, rest and target RPE. <strong>Apply</strong> changes the session. The sets you logged stay as they are.</p></li>
+        <li><p class="q">Replace skull crushers today and in the program.</p><p class="a">In a session: one card in two parts, <strong>The workout</strong> and <strong>Today's session</strong>. One <strong>Apply</strong> changes both.</p></li>
+        <li><p class="q">I missed Wednesday. Where does Lower B go?</p><p class="a">In a block with training days, a card, <strong>Move Lower B</strong>, puts it on a free day left that week. <strong>Apply</strong> moves it.</p></li>
+        <li><p class="q">Make Block 2 a rolling cycle: 3 on, 1 off, 8 cycles.</p><p class="a">A card, <strong>Change Block 2</strong>, shows the new rhythm. After <strong>Apply</strong>, each session is due from your last one, so a break does not use up the block.</p></li>
+        <li><p class="q">How many sets did my chest get each week this month?</p><p class="a">It adds up your working sets per muscle, week by week, and answers with the numbers.</p></li>
+        <li><p class="q">Switch me to kg. My gym has a 20&nbsp;kg bar and plates down to 1.25.</p><p class="a">A card, <strong>Settings</strong>, lists the unit, the bar and the plates. After <strong>Apply</strong>, every load it proposes uses them.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="open" aria-labelledby="h-open">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-open">Open the trainer <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">The same chat opens from each place below. Each place offers its own first questions.</p>
+      </header>
+      <div class="split">
+        <div class="stack">
+          <p class="note action"><strong>You need Block Pro and iOS 27.</strong> Without Pro, a trainer button opens the plans. On iOS 26 and earlier, the Ask trainer buttons do not show, and the Trainer screen, under Next targets on the Plan tab, says Needs iOS 27.</p>
+          <ul class="topics">
+            <li><h3>On Today</h3><p>Tap <strong>Ask trainer</strong>, beside Start session at the bottom of Today. With no workouts yet, Today shows <strong>Build with trainer</strong>.</p></li>
+            <li><h3>On the Plan tab</h3><p>Tap <strong>Ask trainer</strong> at the top of the Plan tab. <strong>Next targets</strong>, beside it, opens the Trainer screen: Ask the trainer, About you, Programs, Lamps and next targets, and your assistants.</p></li>
+            <li><h3>In Progress or a session</h3><p>Tap the trainer button in the top row. It is a speech bubble with three dots. In a session, the trainer sees every set you logged so far.</p></li>
+            <li><h3>On other screens</h3><p>A program's page has <strong>Adjust with the trainer</strong>. A finished block's page has <strong>Plan next block</strong>. The saved scoresheet can show <strong>Ask the trainer</strong> with the next targets.</p></li>
+            <li><h3>In Settings</h3><p>Tap the gear on Today to open Settings. The AI group is under Block Pro, at the top. Tap <strong>AI trainer</strong>. This screen shows who answers on this iPhone and the messages left this month. It also has What you can do, Ask trainer, Your rules and Clear chat.</p></li>
+          </ul>
+        </div>
+        <figure class="shot"><div class="frame"><img src="/assets/img/guide/settings-ai-400.webp" srcset="/assets/img/guide/settings-ai-400.webp 400w, /assets/img/guide/settings-ai-800.webp 800w" sizes="(min-width: 768px) 360px, 90vw" width="1320" height="2868" alt="Settings: Block Pro at the top, then the AI group with AI trainer, Your Claude key, Connect an assistant and Connected assistants." loading="lazy" decoding="async"></div><figcaption>The AI group in Settings</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="build" aria-labelledby="h-build">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-build">Build your first program <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">Start with About you. The trainer and Programs plan from it.</p>
+      </header>
+      <ol class="walk cols">
+        <li class="no-shot"><div class="t">
+          <h3>Fill in About you</h3>
+          <p>Open Settings and tap <strong>About you</strong>. Choose your Goal and your Training experience. Set Your week: the days and the minutes. Choose Where you train.</p>
+          <p>Under Limits and likes, add the lifts you want and the lifts you avoid. Tap <strong>Save</strong>.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Ask for the program</h3>
+          <p>With no workouts yet, tap <strong>Build with trainer</strong> on Today or the Plan tab. In the chat, tap <strong>Build my complete program</strong>.</p>
+          <p>Or type your own request, for example <span class="eg">“Build me a 4&#8209;day upper/lower program, 60 minutes, full gym.”</span></p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Answer its questions</h3>
+          <p>It asks a short question when it does not know your goal or your days a week. For other facts that are missing, it uses a default, such as a full gym, and says what it assumed.</p>
+          <p>With Claude through Block, Claude Sonnet 5 builds the program. Your answers to its questions stay with Sonnet 5 until the proposal comes.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Read the card</h3>
+          <p>It starts from the best fit of the 21 programs. It swaps the lifts you avoid or cannot load. It can also drop lifts or move a workout to another day.</p>
+          <p>Programs run on weekdays. For a rolling cycle, such as 3 on and 1 off, ask for one: the trainer then writes the workouts itself, or a block change makes your block rolling.</p>
+          <p>The card has the program's name, for example <strong>Start Strength Upper Lower 4</strong>. It lists the start day, the weeks, the deload week, the training days and each workout. A program has no loads: your first session sets them.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Tap Review program</h3>
+          <ul>
+            <li>Change the program's name, Starts, the weeks and the Deload week.</li>
+            <li>Pick the workout for each weekday, or Rest. A rolling block that the trainer wrote shows its days on and off and its cycles instead.</li>
+            <li>Tap a workout to change its lifts and sets.</li>
+            <li>Swipe left on a workout to remove it. Tap <strong>Add workout</strong> for a new one, or <strong>Reorder</strong> to drag them.</li>
+          </ul>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Keep draft or Apply program</h3>
+          <p><strong>Keep draft</strong>, at the top of the review, keeps your edits on the card in the chat. It saves nothing to your workouts.</p>
+          <p><strong>Apply program</strong> saves the training block. Its workouts show on the Plan tab, ready to start. To drop the proposal, tap <strong>Dismiss</strong> on the card.</p>
+        </div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="next" aria-labelledby="h-next">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-next">Next targets after a session <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">After every session, the app works out each lift's call: more load, more reps, hold or reset. The trainer reads the same session. It can take a bigger or a smaller step than the call, or hold a lift, and it gives the reason.</p>
+      </header>
+      <ol class="walk cols">
+        <li class="no-shot"><div class="t">
+          <h3>Finish and save</h3>
+          <p>Tap <strong>Finish</strong> in the session's top row. On the scoresheet, tap <strong>Save session</strong>. If some sets are not logged, the button reads Save completed sets.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Let the trainer ask</h3>
+          <p>The saved scoresheet has a panel for the trainer's next targets. When the trainer can answer at once, the app sends this question in the chat for you: <span class="eg">“Set my next targets for Lower A from the session I just saved (Thu 1 Oct).”</span></p>
+          <p>It can answer at once when you saved your own Claude key or already allowed Claude.<span class="pcc"><!-- Private Cloud Compute needs an Apple entitlement that is not granted yet. If 1.0 ships without it, delete this span. --> It can also answer at once where Apple's model answers.</span></p>
+          <p>With Claude through Block, this question counts as one of your messages, and Claude Sonnet 5 answers it. The card then shows on the scoresheet.</p>
+          <p>Otherwise the panel lists the app's calls and <strong>Ask the trainer</strong>. Tap it to open the chat with the same question. The card then comes in the chat, with <strong>Review workout</strong>.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Read each line</h3>
+          <p>Each line shows one lift's change and its reason, for example <span class="eg">Back Squat 3 × 8 at 185 → 3 × 8 at 195</span>, after 3 good lifts at RPE 7.</p>
+          <p>It starts from the app's call for each lift: the lift's step, 10&nbsp;lb or 5&nbsp;kg for a big lower-body lift and 5&nbsp;lb or 2.5&nbsp;kg for any other. It gives a reason when its numbers differ: a lift at the top of its reps at an RPE well under its target can take a bigger jump, and a cable stack at its last plate holds. The app accepts the card only when it covers each lift whose call moves it and is not in the workout yet.</p>
+          <p>When it keeps a lift where it is, it gives a reason. That hold saves at once, before you tap anything.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Apply, Edit, Not now or Talk it through</h3>
+          <p>When the app asked for you, the card on the scoresheet has four buttons:</p>
+          <ul>
+            <li><strong>Apply</strong> saves the new targets to the workout.</li>
+            <li><strong>Edit</strong> opens the workout with the changes, so you can adjust them first.</li>
+            <li><strong>Not now</strong> closes the card. The next session starts at the app's calls. A lift the trainer kept stays where it is.</li>
+            <li><strong>Talk it through</strong> opens the chat.</li>
+          </ul>
+        </div></li>
+      </ol>
+      <div class="copy stack after">
+        <h3>Keep a lift where it is</h3>
+        <p>On Today, long press the lift. Choose its Keep action, such as <strong>Keep at 380&nbsp;lb × 10 reps</strong>. Or tell the trainer why, for example <span class="eg">“The leg press sled ends at 900&nbsp;lb.”</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="session" aria-labelledby="h-session">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-session">During a session <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">In a session, the trainer reads every set you logged, with its lamps. It answers for the set in front of you first.</p>
+      </header>
+      <ol class="walk cols">
+        <li class="no-shot"><div class="t">
+          <h3>Open the chat</h3>
+          <p>Tap the trainer button in the session's top row, beside Finish. The line under the message field shows In session and the workout's name.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Ask about your next set</h3>
+          <p>Ask <span class="eg">“What should I lift on my next set?”</span> or <span class="eg">“That set was too heavy. What now?”</span> It answers in a sentence or two, from the sets you logged and your history.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Ask for a change</h3>
+          <p>It can make four kinds of change:</p>
+          <ul>
+            <li>The load or the reps of the sets you have not logged.</li>
+            <li>A lift swapped for another.</li>
+            <li>A lift added.</li>
+            <li>A lift taken out.</li>
+          </ul>
+          <p>A swap keeps the sets, reps, rest and target RPE. The old lift's loads go, unless the trainer gives new ones.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Choose where the change goes</h3>
+          <ul>
+            <li><strong>Today</strong>: the lamps judge today's numbers. The workout keeps its own.</li>
+            <li><strong>The workout</strong>: the change is saved to the workout from now on. This session stays as it is.</li>
+            <li><strong>Both</strong>: one card with The workout and Today's session, and one Apply.</li>
+          </ul>
+          <p>When your words do not say which, it asks you.</p>
+        </div></li>
+        <li class="no-shot"><div class="t">
+          <h3>Tap Apply</h3>
+          <p>The session changes at once. The trainer never changes a set you logged. A lift with a logged set stays in the session. To fix a logged set, open it and change it yourself.</p>
+        </div></li>
+      </ol>
+      <div class="copy stack after">
+        <h3>Or start the session from the chat</h3>
+        <p>Before you lift, tell it <span class="eg">“I'm about to lift Upper B, lighter today.”</span> The card, <strong>Upper B: start now</strong>, lists every lift as you will lift it. Tap <strong>Start session</strong> to open the session.</p>
+        <p>To move the workout on first, say <span class="eg">“I'm about to lift Upper B. Move it on first.”</span> Start session on that card saves the new loads to the workout, then opens the session.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="plan" aria-labelledby="h-plan">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-plan">Change your plan <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">Ask for all your changes in one message. One request gets one card with one Apply, even across several workouts.</p>
+      </header>
+      <ul class="topics two">
+        <li>
+          <h3>Change a workout</h3>
+          <p>Ask <span class="eg">“In Upper A, swap barbell rows for chest-supported rows, 3 × 10–12.”</span> It can change sets, reps, rep ranges, rest, warm-ups and target RPE. It can also make a stretch a prep lift, which is logged and not judged.</p>
+          <p>A card for one workout shows <strong>Review workout</strong>. In the review, tap <strong>Apply workout</strong>. A card for several workouts has one <strong>Apply</strong>.</p>
+          <p>At Apply, the app checks that the workout did not change after the proposal. If it did, the card tells you to ask the trainer again. A card for a block or a folder does the same check.</p>
+        </li>
+        <li>
+          <h3>Move a missed session</h3>
+          <p>In a block with training days, tell it <span class="eg">“I missed Wednesday.”</span> The card, <strong>Move Lower B</strong>, moves the session to a free day left that week, or skips it this week.</p>
+          <p>A rolling block needs no move. The next session is due at once.</p>
+        </li>
+        <li>
+          <h3>Add a deload or change the block</h3>
+          <p>Ask <span class="eg">“Make week 6 a deload”</span> or <span class="eg">“Start Block 2 next Monday.”</span> The card is named for the block, for example <strong>Change Block 2</strong>. It can change the name, the start day, the length, the training days or the deload week.</p>
+          <p>In a deload week, loads drop to about 85%, with fewer sets and reps. Start saves the move earned before the deload. The deload's loads are for that week only.</p>
+        </li>
+        <li>
+          <h3>Make a block a rolling cycle</h3>
+          <p>Ask <span class="eg">“Make Block 2 a rolling cycle: 3 on, 1 off, 8 cycles.”</span> The workouts then run in their order, not on weekdays. Each session is due from your last one, so a break does not use up the block.</p>
+        </li>
+        <li>
+          <h3>Organize workouts and folders</h3>
+          <p>Ask it to rename, move, copy or delete a workout, or to rename or delete a folder. It proposes a delete only when you ask for one. A deleted workout's sessions stay in Progress.</p>
+        </li>
+        <li>
+          <h3>Change settings or log a measurement</h3>
+          <p>Ask <span class="eg">“Set my default rest to 2:30”</span> or <span class="eg">“I weigh 181.4 today.”</span> The Settings card changes units, default rest, bar and plates. The measurement card logs the numbers you give it for that day.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="rules" aria-labelledby="h-rules">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-rules">Your rules and lift notes <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">The trainer keeps a rules file on you and a note on each lift. You can read and edit the rules file. You can read its lift notes and write your own.</p>
+      </header>
+      <div class="split">
+        <ul class="topics">
+          <li>
+            <h3>Open Your rules</h3>
+            <p>Open Settings and tap <strong>AI trainer</strong>. Under What the trainer knows, tap <strong>Your rules</strong>. The trainer writes the file under four headings, Goals, Preferences, Limits and Lifts, with one point on each line.</p>
+          </li>
+          <li>
+            <h3>Let the trainer write the first file</h3>
+            <p>After you save About you or import from Hevy, the trainer writes the file if you have none yet and it can answer at once. Otherwise, Your rules shows <strong>Ask the trainer to write it</strong>.</p>
+            <p>It writes the file from About you and your history. With Claude through Block, writing the file counts as a trainer message.</p>
+          </li>
+          <li>
+            <h3>Edit it</h3>
+            <p>Type your changes. Tap <strong>Save</strong>. The trainer reads the file in every answer and follows your version.</p>
+            <code class="cmd">## Goals
+- 500 lb deadlift by March
+## Preferences
+- Sessions under 70 minutes
+## Lifts
+- Leg press: the sled ends at 900 lb</code>
+          </li>
+          <li>
+            <h3>Tell it in the chat</h3>
+            <p>Say <span class="eg">“No barbell back squats. Use the safety bar.”</span> It rewrites the file at once, with no card, and says in a line what it saved.</p>
+            <p>The first time it writes warm-ups for you, it saves its warm-up rule under Preferences. Change the rule there, and it follows your rule.</p>
+          </li>
+          <li>
+            <h3>Read the lift notes</h3>
+            <p>In a session, tap <strong>NOTES</strong> under a lift's name. The notes open in parts:</p>
+            <ul>
+              <li><strong>Today</strong>: the app's call for the lift and the workout's note.</li>
+              <li><strong>Trainer</strong>: its note on the lift, such as a cue or what to watch. You can read it. To change it, tell the trainer.</li>
+              <li><strong>Yours</strong>: your own note, such as seat height or grip. Type it in Single lift. It saves when you leave the field.</li>
+            </ul>
+            <p>The trainer reads your note when it is about the question.</p>
+          </li>
+        </ul>
+        <figure class="shot"><div class="frame"><img src="/assets/img/guide/trainer-settings-400.webp" srcset="/assets/img/guide/trainer-settings-400.webp 400w, /assets/img/guide/trainer-settings-800.webp 800w" sizes="(min-width: 768px) 360px, 90vw" width="1320" height="2868" alt="Settings, AI trainer: who answers on this iPhone, What you can do with Read the full guide, Ask trainer, the Use Claude switch, Your Claude key and Your rules." loading="lazy" decoding="async"></div><figcaption>The AI trainer screen in Settings</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="why" aria-labelledby="h-why">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-why">Why it says what it says</h2>
+        <p class="lead">Each recommendation names its reason and its source. You can open the paper behind it.</p>
+      </header>
+      <div class="split even">
+        <div class="copy stack">
+          <p>The trainer cites a research card in brackets after each point, for example (Schoenfeld 2017). The Block app has 37 research cards. Each card gives one finding in plain words and its evidence level, with each source's DOI.</p>
+          <p>Under the answer, <strong>Research</strong> lists each paper with its topic and evidence level. Tap a paper to open it at doi.org. Two cards, Warm-up sets and Soreness and pain, have no study behind them. They show as Coaching practice.</p>
+          <p>A proposal of new loads, a new workout, a block or a session with new numbers must name its research cards, or the app refuses it. When a point comes from somewhere else, the trainer says so: the app's rulebook, your sessions, your rules file or your own request. The trainer is told to cite only these cards, never a study from memory.</p>
+          <p>With Claude, the trainer can search the web for facts the app does not have, such as a competition's rules or a program you name. While it searches, a line reads Searching the web. <strong>Sources</strong>, under the answer, lists each page it cites.</p>
+          <p>For a question about how to use the Block app, it answers from the app's help. It names the buttons as the app shows them.</p>
+        </div>
+        <figure class="answer" aria-labelledby="answer-cap">
+          <p class="q">Can my bench go up next time?</p>
+          <div class="prose"><p>Bench Press moved well last time: every set was a good lift at or under its target RPE, so the load takes its next step (Plotkin 2022). I propose 190 for the next Upper A.</p></div>
+          <div class="refs">
+            <span class="r-head">Research</span>
+            <p><a href="https://doi.org/10.7717/peerj.14142">Plotkin 2022</a><span>Adding reps or adding load. Limited evidence.</span></p>
+          </div>
+          <div class="proposal">
+            <span class="p-title">Proposal</span>
+            <span class="p-name">Upper A</span>
+            <p class="p-sum">5 lifts, 16 sets</p>
+            <ul><li>Bench Press: 3 × 8 at 185 → 3 × 8 at 190</li></ul>
+            <div class="p-actions" aria-hidden="true"><span class="primary">Review workout</span><span>Dismiss</span></div>
+          </div>
+          <figcaption id="answer-cap">A sample answer, drawn as the chat shows it. Review workout opens the workout, and Apply workout saves it.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="who" aria-labelledby="h-who">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-who">Who answers, and the monthly limit <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">The trainer uses the first of these that can answer. The line under the message field names it.</p>
+      </header>
+      <div class="table-scroll">
+        <table class="data compare">
+          <caption class="sr-only">The ways the trainer answers, in the order it tries them</caption>
+          <thead><tr><th scope="col">Who answers, in order</th><th scope="col">Model</th><th scope="col">Limit</th><th scope="col">Cost</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Your own Claude key</th><td data-label="Model">Claude Sonnet 5 for every message</td><td data-label="Limit">No monthly limit from Block</td><td data-label="Cost">Anthropic bills your Claude Console account for each use. <a href="/claude-key/">Set up your key</a></td></tr>
+            <!-- Private Cloud Compute needs an Apple entitlement that is not granted yet (MD_PRIVATE_CLOUD_COMPUTE = NO). guide.css hides .pcc; if 1.0 ships without it, delete this row. -->
+            <tr class="pcc"><th scope="row">Apple's model on Private Cloud Compute</th><td data-label="Model">Apple's model, on iPhones with Apple Intelligence</td><td data-label="Limit">No message count</td><td data-label="Cost">Part of Block Pro</td></tr>
+            <tr><th scope="row">Claude through Block</th><td data-label="Model">Claude Haiku 4.5 for most messages. Claude Sonnet 5 to build a program or a block, and for the two questions the app sends for you: your next targets after a session and your first rules file.</td><td data-label="Limit">Up to 60 messages a month, within a monthly cost limit. A long build uses more of it. Tool steps in one message do not count.</td><td data-label="Cost">Part of Block Pro</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="split" style="margin-top:44px">
+        <div class="copy stack">
+          <p>Before your first question goes to Claude through Block, a sheet asks <strong>Send to Claude?</strong> It lists what is sent. Allow sends the question. Not now sends nothing.</p>
+          <p>The line under the message field shows who answers and the messages left, for example Claude by Anthropic with 42 messages left. With your own key, it shows Claude Sonnet 5 and your key. Tap the line for About the trainer, with the model and the messages left until they renew. The count starts again on the first of each month (UTC).</p>
+          <p>A question you type yourself, such as “Set my next targets for Lower A”, goes to Claude Haiku 4.5. Only the question the app sends for you goes to Claude Sonnet 5.</p>
+          <p>To take the permission back, turn off <strong>Use Claude</strong> in Settings &gt; AI trainer.</p>
+          <p>When your own key cannot answer, for example with no credit, a note says why, and the built-in trainer answers that question. With no connection, nothing answers.</p>
+          <p class="more"><a href="/claude-key/">How to get and save your own Claude key</a></p>
+        </div>
+        <figure class="shot"><div class="frame"><img src="/assets/img/guide/claude-key-400.webp" srcset="/assets/img/guide/claude-key-400.webp 400w, /assets/img/guide/claude-key-800.webp 800w" sizes="(min-width: 768px) 360px, 90vw" width="1320" height="2868" alt="Settings, Your Claude key, with no key saved: What you can do, the four steps under Get a key with Open Claude Console, then the key field and Verify &amp; save key." loading="lazy" decoding="async"></div><figcaption>Your Claude key, in Settings</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="data" aria-labelledby="h-data">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-data">Where your data goes</h2>
+        <p class="lead">To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block, your gym, About you (with your injuries, limits and notes), your rules file, lift notes and body measurements.</p>
+      </header>
+      <div class="table-scroll">
+        <table class="data">
+          <caption class="sr-only">Where your question and training data go for each way the trainer answers</caption>
+          <thead><tr><th scope="col">When this answers</th><th scope="col">What is sent</th><th scope="col">Where it is kept</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Your own Claude key</th><td class="steel" data-label="What is sent">Your question and the training data the answer needs, from your iPhone to Anthropic, with your key.</td><td class="steel" data-label="Where it is kept">Under your own agreement with Anthropic. Block's server never sees the key or the chat. The key stays in this iPhone's Keychain.</td></tr>
+            <!-- Private Cloud Compute needs an Apple entitlement that is not granted yet. If 1.0 ships without it, delete this row. -->
+            <tr class="pcc"><th scope="row">Apple's model on Private Cloud Compute</th><td class="steel" data-label="What is sent">Your question and the training data the answer needs.</td><td class="steel" data-label="Where it is kept">Nowhere. Apple uses the request to answer and does not store it.</td></tr>
+            <tr><th scope="row">Claude through Block</th><td class="steel" data-label="What is sent">Your question and the training data the answer needs, through Block's server. Not your name or your email.</td><td class="steel" data-label="Where it is kept">Anthropic deletes it within 30 days, unless it must keep it longer to enforce its usage policy or to obey the law. It does not train its models on it. Block's server counts the messages and does not store them.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="copy stack" style="margin-top:28px">
+        <p>The chat stays on this iPhone, for your account. Your rules file and lift notes are saved in your Block account with your training data.</p>
+        <p class="fine">The <a href="/privacy.html">privacy policy</a> has the details.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="h-faq">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-faq">Limits and questions</h2>
+      </header>
+      <div class="qa">
+        <div><p class="q">What do I need?</p><p>Block Pro and iOS 27. Without Pro, a trainer button opens the plans. On iOS 26 and earlier, the app shows Needs iOS 27 for the trainer, and the app's next targets still work with Pro. Block Pro is $4.99 a month, or $39.99 a year with a one-week free trial for new subscribers.</p></div>
+        <div><p class="q">Does it give medical advice?</p><p>No. For soreness or a tweak, it can propose lighter loads or a lift that avoids the painful movement. For an injury, or pain that is sharp or that lasts, it tells you to stop that movement and see a doctor or a physical therapist. It keeps to your training and the app.</p></div>
+        <div><p class="q">Does anything change without Apply?</p><p>Changes to your workouts, blocks, settings and About you wait for Apply. Four things save at once, with no card: your rules file, its note on a lift, a hold that keeps a lift where it is, and feedback you ask it to send.</p></div>
+        <div><p class="q">Why did it stop with Try again?</p><p>An answer that runs past its length limit stops, and the chat shows none of it. Tap Try again, or ask for one part at a time.</p></div>
+        <div><p class="q">What do Not answered and Chat status mean?</p><p>Not answered, under your question, means it was not delivered. The Chat status panel under it gives the next step: Try again or Edit question after a connection or model failure, Review permission when Claude is not allowed yet, Check access for a Pro problem, Check messages when this month's messages are used up. A retry sends the same question again. It does not post a copy.</p></div>
+        <div><p class="q">Why does it say Chat paused?</p><p>Pro access or this month's messages stopped the chat. The monthly cost limit stops it the same way. Earlier messages stay readable. Check access asks the server about Pro again, and Check messages asks about the messages left. Neither sends your question. Send it again when access is back.</p></div>
+        <div><p class="q">How do I clear the chat?</p><p>Tap Clear at the top of the chat, or Clear chat in Settings &gt; AI trainer. It removes the chat from this iPhone. Changes you applied stay.</p></div>
+        <div><p class="q">Where is the chat kept?</p><p>On this iPhone, for your account. It stays when you sign out. Another iPhone does not get it. Deleting your account deletes it.</p></div>
+        <div><p class="q">Does it need a connection?</p><p>Yes. With no connection, nothing answers, and your question stays in the chat. Tap Try again when you are back online.</p></div>
+        <div><p class="q">Can I tell the team something?</p><p>Yes. Tell the trainer what broke or what you want, in your own words. It sends it to the team, and the chat says Feedback sent.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="more" aria-labelledby="h-more">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-more">Other ways to use AI with your log</h2>
+        <p class="lead">The AI trainer and connected assistants are part of Block Pro. Your own Claude key works with the trainer.</p>
+      </header>
+      <ul class="guide-links">
+        <li><a href="/assistants/"><span class="g-title">Connect an assistant</span><span class="g-text">Use Claude or Gemini outside the app. Sign in once, and the assistant reads your log and saves workouts and training blocks in the Block app.</span></a></li>
+        <li><a href="/claude-key/"><span class="g-title">Your Claude key</span><span class="g-text">Save an Anthropic API key. Then Claude Sonnet 5 answers every message on your own account, with no monthly limit from Block.</span></a></li>
+      </ul>
+      <div class="cta" data-store="site-trainer"><span class="soon">Coming soon to the App Store</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <a class="foot-mark" href="/"><svg class="logo" viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+      <nav class="links" aria-label="Site">
+        <a href="/switch/">Switch from Hevy</a>
+        <a href="/progression/">Progression</a>
+        <a href="/plates/">Plate calculator</a>
+        <a href="/trainer/" aria-current="page">The AI trainer</a>
+        <a href="/assistants/">Connect an assistant</a>
+        <a href="/claude-key/">Your Claude key</a>
+        <a href="/january/">January</a>
+        <a href="/creators/">Creators</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <nav class="links" aria-label="Legal" style="margin-bottom:12px">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+        <a href="/support.html">Support</a>
+      </nav>
+      <p>© 2026 Matthew Dumas</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

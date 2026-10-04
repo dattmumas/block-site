@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Block privacy policy</title>
+<meta name="description" content="The privacy policy of Block, the lifting log for iPhone: what the app collects, why, where it is stored, who can see it, and how to delete it.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#d9d8d2">
+<link rel="canonical" href="https://block.lnkd.world/privacy.html">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/Archivo-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/landing.css">
+<style>
+  /* This page only: the policy as a document to read. The sections on the left (in view on a
+     wide screen), the text in one column on the right, in iron for long reading. */
+  .doc-hero .intro { gap: 20px; max-width: 760px; }
+  .doc-hero h1 { font-size: clamp(48px, 7vw, 96px); }
+  .doc-hero .effective { font-size: 15px; font-weight: 650; color: var(--steel); }
+  .doc-hero .intro p:not(.effective) { font-size: clamp(18px, 1.6vw, 20px); line-height: 1.5; max-width: var(--measure); }
+  .policy { padding-top: clamp(48px, 6vw, 80px); }
+  .policy .wrap { display: grid; gap: 44px; align-items: start; }
+  @media (min-width: 1024px) {
+    .policy .wrap { grid-template-columns: 250px minmax(0, 1fr); column-gap: clamp(56px, 7vw, 112px); }
+    .doc-toc { position: sticky; top: 24px; }
+  }
+  .doc-toc { display: grid; gap: 12px; }
+  .doc-toc h2 { font-stretch: 112%; font-weight: 760; font-size: 17px; letter-spacing: -0.01em; line-height: 1.2; }
+  .doc-toc ul { margin: 0; padding: 0; list-style: none; border-bottom: 1.5px solid var(--mortar); }
+  .doc-toc li { border-top: 1.5px solid var(--mortar); }
+  .doc-toc a { display: flex; align-items: center; min-height: 40px; padding: 7px 0; color: var(--iron); font-size: 15px; font-weight: 560; line-height: 1.3; text-decoration: none; }
+  .doc-toc a:hover { text-decoration: underline; }
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .doc-toc ul { display: grid; grid-auto-flow: column; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(6, auto); column-gap: 32px; }
+  }
+  .doc-body { max-width: 720px; }
+  .doc-body section { scroll-margin-top: 24px; }
+  .doc-body section + section { margin-top: clamp(44px, 5vw, 64px); }
+  .doc-body h2 { font-size: clamp(26px, 2.6vw, 34px); margin-bottom: 16px; }
+  .doc-body p, .doc-body li, .doc-body td { color: var(--iron); }
+  .doc-body p + p { margin-top: 0.9em; }
+  .doc-body ul { margin: 14px 0; padding-left: 20px; display: grid; gap: 8px; list-style: square; }
+  .doc-body li::marker { color: var(--iron); }
+  .doc-body .table-scroll { margin: 4px 0 22px; }
+  .collect th[scope="row"] { font-weight: 700; color: var(--iron); font-size: 16px; }
+  .collect td { font-size: 15.5px; line-height: 1.5; }
+  @media (min-width: 720px) { .collect th[scope="row"] { width: 30%; } .collect td:nth-of-type(1) { width: 32%; } }
+</style>
+</head>
+<body class="doc">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/"><svg class="logo" viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+    <nav class="links" aria-label="Pages">
+      <a href="/#how">How it works</a>
+      <a href="/progression/">Progression</a>
+      <a href="/plates/">Plates</a>
+      <a href="/trainer/">AI</a>
+      <a href="/switch/">Switch</a>
+      <a href="/#pro">Pricing</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero doc-hero" aria-labelledby="h-page">
+    <div class="wrap">
+      <div class="intro">
+        <h1 id="h-page">Privacy policy</h1>
+        <p class="effective">Effective September 25, 2026</p>
+        <p>Block is an iPhone app for logging strength training, operated by Matthew Dumas ("we"). This policy explains what the app collects, why, and the control you have over it. Contact: <a href="mailto:support@lnkd.world">support@lnkd.world</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="policy">
+    <div class="wrap">
+      <nav class="doc-toc" aria-labelledby="h-toc">
+        <h2 id="h-toc">On this page</h2>
+        <ul>
+          <li><a href="#collect">What we collect</a></li>
+          <li><a href="#stored">Where your data is stored</a></li>
+          <li><a href="#who">Who can see it</a></li>
+          <li><a href="#trainer">The AI trainer</a></li>
+          <li><a href="#assistants">Connected assistants and API keys</a></li>
+          <li><a href="#ads">Apple Ads</a></li>
+          <li><a href="#deletion">Retention and deletion</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#health">Health information</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes</a></li>
+        </ul>
+      </nav>
+
+      <div class="doc-body">
+        <section id="collect" aria-labelledby="h-collect">
+          <h2 id="h-collect">What we collect</h2>
+          <div class="table-scroll">
+            <table class="data collect">
+              <caption class="sr-only">What we collect, its source and its purpose</caption>
+              <thead><tr><th scope="col">Data</th><th scope="col">Source</th><th scope="col">Purpose</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Email address</th><td data-label="Source">You, or Sign in with Apple (you can choose Hide My Email)</td><td data-label="Purpose">Account sign-in, confirmation codes, password reset, support</td></tr>
+                <tr><th scope="row">Name</th><td data-label="Source">Sign in with Apple, if you share it, or Settings</td><td data-label="Purpose">Shown in Settings</td></tr>
+                <tr><th scope="row">Account ID</th><td data-label="Source">Created at sign-up</td><td data-label="Purpose">Links your data to your account</td></tr>
+                <tr><th scope="row">Sessions, sets, blocks, schedules, custom exercises</th><td data-label="Source">You, or tools you connect with an API key</td><td data-label="Purpose">The core function of the app: planned loads, judged sets, history, records and charts</td></tr>
+                <tr><th scope="row">Body measurements (weight, body fat, circumferences)</th><td data-label="Source">You, if you choose to enter them</td><td data-label="Purpose">Measurement history and trend charts</td></tr>
+                <tr><th scope="row">Settings (units, rest time, the plates and bars in your gym)</th><td data-label="Source">You</td><td data-label="Purpose">App behavior and plate math</td></tr>
+                <tr><th scope="row">Block Pro purchases: the plan, its renewal or end date, the App Store transaction ID, and the free trial or offer code of the purchase</th><td data-label="Source">The App Store, when you subscribe or restore</td><td data-label="Purpose">Opens Block Pro on every device you sign in to, and for your API keys and connected assistants. We also count subscriptions per ad keyword and per offer code.</td></tr>
+                <tr><th scope="row">Apple Ads attribution: whether one of our ads in the App Store led to your install, and if so, which ad</th><td data-label="Source">Apple, the first time you open the app (see Apple Ads)</td><td data-label="Purpose">Counts the free trials and subscriptions that each ad keyword brings</td></tr>
+                <tr><th scope="row">Trainer usage: how many trainer messages your account sent to Claude each month, and their size in tokens</th><td data-label="Source">Our server, when the trainer answers with Claude</td><td data-label="Purpose">The monthly allowance of Block Pro. The questions and answers are not stored.</td></tr>
+                <tr><th scope="row">Connected assistants: which assistant you connected and when</th><td data-label="Source">Our sign-in service, when you tap Allow</td><td data-label="Purpose">Lets the assistant act for you until you revoke it</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Apple processes the payment for Block Pro. We never receive your payment card or your Apple Account details.</p>
+          <p>We do not collect location, contacts, photos, advertising identifiers or browsing history. The app has no ads, no analytics SDKs and no tracking. We do not sell or share your data for advertising.</p>
+        </section>
+
+        <section id="stored" aria-labelledby="h-stored">
+          <h2 id="h-stored">Where your data is stored</h2>
+          <p>Your data is stored in a database hosted by Supabase, Inc., on Amazon Web Services infrastructure. Data is encrypted in transit (HTTPS) and at rest. Database rules restrict every record to its owner's account. The session in progress is also kept on your iPhone until you finish or discard it. The widgets and the rest clock on the Lock Screen read a copy of your next session that stays on your iPhone.</p>
+        </section>
+
+        <section id="who" aria-labelledby="h-who">
+          <h2 id="h-who">Who can see it</h2>
+          <p>Only you. We share data only with service providers that run the app for us, and only as needed for that purpose:</p>
+          <ul>
+            <li>Supabase: database, authentication and server functions</li>
+            <li>Resend: sends confirmation and password reset codes to your email address</li>
+            <li>Apple: Sign in with Apple, if you use it, and payments for Block Pro through the App Store</li>
+            <li>Anthropic: answers the trainer's questions with Claude, only after you allow it or add your own Anthropic API key (see The AI trainer)</li>
+          </ul>
+          <p>We may disclose data if the law requires it.</p>
+        </section>
+
+        <section id="trainer" aria-labelledby="h-trainer">
+          <h2 id="h-trainer">The AI trainer</h2>
+          <p>With Block Pro on iOS 27, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block and your gym. It proposes changes, and they save only when you tap Apply.</p>
+          <ul>
+            <li>Apple Intelligence: when your iPhone supports it, the trainer answers with Apple's model on Private Cloud Compute. Apple processes the request to answer it and does not store it.</li>
+            <li>Claude by Anthropic: when Apple's model is not available, the trainer can answer with Claude, and only after you allow it in the app. Your question and the training data the trainer needs go to Anthropic through our server. Your name, email and account details are not sent. Anthropic uses the data to answer and does not train its models on it, under its commercial terms. Anthropic deletes it within 30 days, unless it must keep it longer to enforce its usage policy or to comply with the law. You can take the permission back in Today &gt; Settings &gt; AI &gt; AI trainer.</li>
+            <li>Your own Claude key: if you add your own Anthropic API key in Today &gt; Settings &gt; AI &gt; Your Claude key, the trainer answers with Claude first. The app sends your question and the training data the trainer needs straight to Anthropic with your key, under your own agreement with Anthropic. The key stays in your iPhone's Keychain. Our server never receives the key, your questions or the answers. Remove the key there at any time; deleting your account also removes it.</li>
+          </ul>
+          <p>The chat stays on your iPhone, and deleting your account deletes it. Our server does not store your questions or the answers; it counts messages and tokens for the monthly allowance.</p>
+        </section>
+
+        <section id="assistants" aria-labelledby="h-assistants">
+          <h2 id="h-assistants">Connected assistants and API keys</h2>
+          <p>You can connect an AI assistant you already use, such as Claude, ChatGPT or Gemini, by signing in with Block on our sign-in page and tapping Allow. The assistant then reads and changes your training data through Block's tools, as you. It cannot see your password, make API keys or delete your account. The data it receives is governed by that assistant's own privacy policy. See and revoke connections in Today &gt; Settings &gt; AI &gt; Connected assistants.</p>
+          <p>For scripts that call Block's API, you can create personal API keys in Today &gt; Settings &gt; Advanced. Anyone holding a key can read and change your training data, so share keys only with tools you trust. You can revoke a key at any time. We store only a one-way hash of each key.</p>
+        </section>
+
+        <section id="ads" aria-labelledby="h-ads">
+          <h2 id="h-ads">Apple Ads</h2>
+          <p>We show ads for Block in App Store search with Apple Ads. When you open the app for the first time, it gets an attribution token from Apple. The app sends this token to our server. Our server sends only this token to Apple. Apple answers with its attribution record. If you installed Block after you tapped or saw one of our ads, the record identifies that ad: the campaign, the ad group, the ad and the search keyword. It also gives the country or region of the campaign. If no ad of ours led to the install, the record says only that. We store the record with your account. We do not store the token. We use the record to count the free trials and subscriptions that each keyword brings. The record contains no advertising identifier. The app never reads one. Block does not track you, so the app does not ask for permission to track. Apple does not require that permission for this record. Deleting your account deletes the record.</p>
+        </section>
+
+        <section id="deletion" aria-labelledby="h-deletion">
+          <h2 id="h-deletion">Retention and deletion</h2>
+          <p>We keep your data while your account exists. To delete your account and all of its data, open Today &gt; Settings &gt; Delete Account. Deletion is immediate and permanent, and it also ends every connected assistant, removes your API keys and trainer usage records, and deletes the trainer's chat on that iPhone. If you used Sign in with Apple, we also revoke the app's Apple sign-in tokens. Deleting your account does not cancel a Block Pro subscription: Apple bills it until you cancel it in your Apple Account settings (Settings &gt; your name &gt; Subscriptions). Copies may remain in our hosting provider's encrypted backups for a limited period before they are overwritten. You can also email us to request deletion or a copy of your data.</p>
+        </section>
+
+        <section id="rights" aria-labelledby="h-rights">
+          <h2 id="h-rights">Your rights</h2>
+          <p>Depending on where you live, you may have the right to access, correct, export or delete your personal data, and to object to or restrict processing. Most of these you can do in the app. For anything else, email <a href="mailto:support@lnkd.world">support@lnkd.world</a> and we will respond within 30 days.</p>
+        </section>
+
+        <section id="health" aria-labelledby="h-health">
+          <h2 id="h-health">Health information</h2>
+          <p>Block is a training log. It does not give medical advice and is not a medical device, and the trainer gives no diagnosis or treatment. We use your training and body data only to show it to you and, when you ask, for the trainer's answers.</p>
+        </section>
+
+        <section id="children" aria-labelledby="h-children">
+          <h2 id="h-children">Children</h2>
+          <p>Block is not directed to children under 13, and we do not knowingly collect their data. If you believe a child has created an account, contact us and we will delete it.</p>
+        </section>
+
+        <section id="changes" aria-labelledby="h-changes">
+          <h2 id="h-changes">Changes</h2>
+          <p>If we change this policy, we will update the effective date above and, for material changes, tell you in the app before the change applies.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <a class="foot-mark" href="/"><svg class="logo" viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+      <nav class="links" aria-label="Site">
+        <a href="/switch/">Switch from Hevy</a>
+        <a href="/progression/">Progression</a>
+        <a href="/plates/">Plate calculator</a>
+        <a href="/trainer/">The AI trainer</a>
+        <a href="/assistants/">Connect an assistant</a>
+        <a href="/claude-key/">Your Claude key</a>
+        <a href="/january/">January</a>
+        <a href="/creators/">Creators</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <nav class="links" aria-label="Legal" style="margin-bottom:12px">
+        <a href="/privacy.html" aria-current="page">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+        <a href="/support.html">Support</a>
+      </nav>
+      <p>© 2026 Matthew Dumas</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

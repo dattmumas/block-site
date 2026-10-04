@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good lifts move you up: progression in Block</title>
+<meta name="description" content="How three lamps judge a set in Block, and how the rulebook sets your next loads. Lift a set in the demo and see the lamps and the next load.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#d9d8d2">
+<link rel="canonical" href="https://block.lnkd.world/progression/">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Block">
+<meta property="og:title" content="Good lifts move you up">
+<meta property="og:description" content="Three lamps judge every planned set. Every set good, the load goes up a step. A red lamp holds it. Try a set against the rulebook.">
+<meta property="og:url" content="https://block.lnkd.world/progression/">
+<meta property="og:image" content="https://block.lnkd.world/assets/og/progression.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The words Good lifts move the bar up, tagged Pro, beside a Next targets card: Back Squat 195 up 10, Romanian Deadlift 235 held, Bench Press 165 reset, and Walking Lunge 30 with one more rep.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Good lifts move you up">
+<meta name="twitter:description" content="Three lamps judge every planned set. Every set good, the load goes up a step. A red lamp holds it. Try a set against the rulebook.">
+<meta name="twitter:image:alt" content="The words Good lifts move the bar up, tagged Pro, beside a Next targets card: Back Squat 195 up 10, Romanian Deadlift 235 held, Bench Press 165 reset, and Walking Lunge 30 with one more rep.">
+<meta name="twitter:image" content="https://block.lnkd.world/assets/og/progression.png">
+<!-- smart-app-banner -->
+<link rel="preload" href="/fonts/Archivo-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/landing.css">
+<script src="/config.js" defer></script>
+<script src="/site.js" defer></script>
+<script src="/assets/js/platemath.js" defer></script>
+<script src="/assets/js/judge.js" defer></script>
+<script src="/assets/js/progression.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/"><svg class="logo" viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+    <nav class="links" aria-label="Pages">
+      <a href="/#how">How it works</a>
+      <a href="/progression/" aria-current="page">Progression</a>
+      <a href="/plates/">Plates</a>
+      <a href="/trainer/">AI</a>
+      <a href="/switch/">Switch</a>
+      <a href="/#pro">Pricing</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="h-page">
+    <div class="wrap">
+      <div class="intro">
+        <h1 id="h-page">Good lifts move you up <span class="tag">Pro</span></h1>
+        <p class="lead">Three lamps judge each planned set: reps, load and effort. After the session, the rulebook works out each lift's next load, and Start session saves it to the workout.</p>
+        <div class="cta" data-store="site-progression"><span class="soon">Coming soon to the App Store</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec try" id="try" aria-labelledby="h-try">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-try">Lift the last set</h2>
+        <p class="lead">Sets 1 and 2 were good lifts. Change set 3, then read the lamps and the next load.</p>
+      </header>
+
+      <p class="fine" id="demo-static">The demo needs JavaScript. In short: every set good, the load goes up a step. Any red lamp, the load holds. A second red lamp in a row at the same load resets it about 10%.</p>
+
+      <div class="demo" id="demo" role="group" hidden aria-labelledby="h-try">
+        <div class="d-sets">
+          <div class="d-head">
+            <p class="label chalk">Back Squat, 3 × 8 at RPE 8</p>
+            <fieldset class="seg">
+              <legend class="sr-only">Unit</legend>
+              <label><input type="radio" name="d-unit" value="lb" checked><span>lb</span></label>
+              <label><input type="radio" name="d-unit" value="kg"><span>kg</span></label>
+            </fieldset>
+          </div>
+          <table class="sets">
+            <caption class="sr-only">The three sets of Back Squat</caption>
+            <thead><tr><th scope="col">Set</th><th scope="col">Lifted</th><th scope="col" class="end">Lamps</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td class="steel"><span data-planned>185</span> × 8 at RPE 7</td><td class="end"><span class="lamps xs" role="img" aria-label="Good lift"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
+              <tr><td>2</td><td class="steel"><span data-planned>185</span> × 8 at RPE 7</td><td class="end"><span class="lamps xs" role="img" aria-label="Good lift"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
+              <tr class="you"><td>3</td><td id="d-set3">185 × 8, no RPE</td><td class="end"><span class="lamps xs" id="d-set3-lamps" aria-hidden="true"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="d-judge">
+          <p class="label">Set 3 of 3</p>
+          <div class="lamps xl labeled lit" id="d-lamps" aria-hidden="true">
+            <span class="cell"><span class="lamp"></span><span class="label">Reps</span></span>
+            <span class="cell"><span class="lamp"></span><span class="label">Load</span></span>
+            <span class="cell"><span class="lamp"></span><span class="label">Effort</span></span>
+          </div>
+          <p class="verdict" id="d-verdict">Good lift</p>
+          <p class="label reasons" id="d-reasons" hidden></p>
+        </div>
+
+        <div class="d-inputs">
+          <h3 class="d-title">Log set 3</h3>
+          <div class="d-steppers">
+            <div class="field">
+              <label class="label" for="d-reps">Reps</label>
+              <div class="stepper">
+                <button type="button" data-reps-step="-1" aria-label="One rep less">−</button>
+                <input id="d-reps" type="number" inputmode="numeric" min="0" max="30" step="1" value="8">
+                <button type="button" data-reps-step="1" aria-label="One rep more">+</button>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="d-load">Load, <span data-unit>lb</span></label>
+              <div class="stepper">
+                <button type="button" class="d-load-minus" data-load-step="-5" aria-label="Take off 5 lb">−</button>
+                <input id="d-load" type="number" inputmode="decimal" min="45" step="5" value="185">
+                <button type="button" class="d-load-plus" data-load-step="5" aria-label="Add 5 lb">+</button>
+              </div>
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend class="label">RPE</legend>
+            <div class="seg rpe">
+              <label><input type="radio" name="d-rpe" value="" checked><span>None</span></label>
+              <label><input type="radio" name="d-rpe" value="6"><span>6</span></label>
+              <label><input type="radio" name="d-rpe" value="7"><span>7</span></label>
+              <label><input type="radio" name="d-rpe" value="8"><span>8</span></label>
+              <label><input type="radio" name="d-rpe" value="9"><span>9</span></label>
+              <label><input type="radio" name="d-rpe" value="10"><span>10</span></label>
+            </div>
+          </fieldset>
+          <label class="toggle"><input type="checkbox" id="d-held"><span class="sw" aria-hidden="true"></span><span class="t">The last session had a red lamp at this load<small>A second red lamp in a row at the same load resets the lift.</small></span></label>
+        </div>
+
+        <div class="d-card">
+          <p class="label">Next session</p>
+          <div class="card-line">
+            <span class="heavy">Back Squat</span>
+            <span class="why" id="d-why">3 good lifts at RPE 7.</span>
+            <div class="declared"><span class="num" id="d-next">195</span><span class="ct up" id="d-tag">+10</span></div>
+          </div>
+          <div class="bar-box" id="d-bar"></div>
+          <p class="label chalk" id="d-plates">45 + 25 + 5 per side</p>
+        </div>
+        <p class="sr-only" aria-live="polite" id="d-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="lamps" aria-labelledby="h-lamps">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-lamps">A white lamp is a pass <span class="tag">Pro</span></h2>
+        <p class="lead">Each set with a planned load or reps gets three lamps. One red lamp makes the set a no lift, and the set screen names the reason.</p>
+      </header>
+      <div class="split pairs">
+        <div class="copy stack">
+          <ul class="legend lamp-guide">
+            <li><span class="lamps s" role="img" aria-label="Three white lamps"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span><span class="t"><span class="label">Good lift</span><span>All reps, full load, and RPE at or under the lift's target RPE.</span></span></li>
+            <li><span class="lamps s" role="img" aria-label="Red, white, white"><span class="lamp no"></span><span class="lamp"></span><span class="lamp"></span></span><span class="t"><span class="label">No lift on reps</span><span>Short of the target reps: the set's reps, or the bottom of its range.</span></span></li>
+            <li><span class="lamps s" role="img" aria-label="White, red, white"><span class="lamp"></span><span class="lamp no"></span><span class="lamp"></span></span><span class="t"><span class="label">No lift on load</span><span>Under the planned load.</span></span></li>
+            <li><span class="lamps s" role="img" aria-label="White, white, red"><span class="lamp"></span><span class="lamp"></span><span class="lamp no"></span></span><span class="t"><span class="label">No lift on effort</span><span>RPE over the lift's target RPE.</span></span></li>
+            <li><span class="lamps s" role="img" aria-label="Three lamps off"><span class="lamp off"></span><span class="lamp off"></span><span class="lamp off"></span></span><span class="t"><span class="label">Not judged</span><span>Warm-ups, drop sets, prep lifts, and sets with no planned load or reps.</span></span></li>
+          </ul>
+          <p>A weight-and-reps set that beats the target's estimated max passes reps and load together: 360 × 8 against a target of 365 × 6 is the stronger set. The estimated max is the load × (1 + reps / 30).</p>
+          <p>Each lift has a target RPE, 8 when you set none. The set screen logs each set at the target RPE. Tap another number when the set was easier or harder. No RPE counts as a pass.</p>
+          <p>For an assisted lift, less help is the harder lift. The load lamp is white at the planned help or less.</p>
+        </div>
+        <div class="shots">
+          <figure class="shot pair"><div class="frame"><img src="/assets/img/01-good-lift-400.webp" srcset="/assets/img/01-good-lift-400.webp 400w, /assets/img/01-good-lift-800.webp 800w" sizes="(min-width: 768px) 300px, 45vw" width="1320" height="2868" alt="The set screen after a good lift: three white lamps over REPS, LOAD and EFFORT, the words GOOD LIFT, and 8 reps at RPE 8 with 185 lb." loading="lazy" decoding="async"></div><figcaption>A good lift: 8 reps at RPE 8</figcaption></figure>
+          <figure class="shot pair"><div class="frame"><img src="/assets/img/05-no-lift-400.webp" srcset="/assets/img/05-no-lift-400.webp 400w, /assets/img/05-no-lift-800.webp 800w" sizes="(min-width: 768px) 300px, 45vw" width="1320" height="2868" alt="The set screen after a no lift: red lamps for REPS and EFFORT, a white lamp for LOAD, the words NO LIFT, and 7 of 8 reps at RPE 9." loading="lazy" decoding="async"></div><figcaption>A no lift: 7 of 8 reps at RPE 9</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="rulebook" aria-labelledby="h-rulebook">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-rulebook">Five rules set the next loads <span class="tag">Pro</span></h2>
+        <p class="lead">After a session of a workout, the rulebook works out each lift's call. Today shows it, and Start session saves it to the workout.</p>
+      </header>
+      <div class="split even">
+        <div class="copy stack">
+          <table class="rulebook">
+            <caption class="sr-only">The five rules and the call each one writes</caption>
+            <tbody>
+              <tr><th scope="row">1</th><td>A good lift: all reps, full load, and RPE at or under the target RPE.</td><td class="calls"><span class="lamps xs" role="img" aria-label="Three white lamps"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
+              <tr><th scope="row">2</th><td>Every set a good lift: the load goes up a step.<span class="sub">10 lb or 5 kg for a big lower-body lift, 5 lb or 2.5 kg for any other lift.</span></td><td class="calls"><span class="ct up">+10</span></td></tr>
+              <tr><th scope="row">3</th><td>Any red lamp: same load next time.</td><td class="calls"><span class="ct hold">Hold</span></td></tr>
+              <tr><th scope="row">4</th><td>A second red lamp in a row at the same load: reset about 10% and build back.</td><td class="calls"><span class="ct reset">Reset</span></td></tr>
+              <tr><th scope="row">5</th><td>Deload week: a lighter bar and fewer sets.<span class="sub">Start saves the step earned before it. The deload's loads are for that week only.</span></td><td class="calls"><span class="ct deload">Deload</span></td></tr>
+            </tbody>
+          </table>
+          <p>In a rep range, reps come first. Every set good adds a rep, with the call <span class="nowrap"><span class="ct up">Reps +1</span>.</span> At the top of the range, the load goes up a step and the reps start again at the bottom.</p>
+          <p>A big lower-body lift is a weight-and-reps lift on a barbell, a machine or plates for the quads, glutes or hamstrings, and not a curl, extension, kickback, abduction, adduction, raise or calf lift. A lift you set a step for moves by its own step.</p>
+          <p>A load heavier than planned counts when you lift it for the reps on at least half the sets planned at the top load. The next step starts from it.</p>
+        </div>
+        <div class="copy stack">
+          <h3>Other calls</h3>
+          <ul class="legend">
+            <li><span class="ct same">Same</span><span>The load does not move.</span></li>
+            <li><span class="ct plain">Set</span><span>The first session of a lift with no planned load sets it, from your heaviest work set.</span></li>
+            <li><span class="ct plain">Keep</span><span>Hold a lift's row on Today and choose Keep: it stays where it is.</span></li>
+            <li><span class="ct plain">New</span><span>On Today: a lift with no session yet.</span></li>
+          </ul>
+          <p>Change load sets another load for one session. The workout keeps its own numbers, and the next target comes from what you lifted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="when" aria-labelledby="h-when">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="h-when">From the last session</h2>
+        <p class="lead">The calls come from the workout's last session. The next Start session saves the ones the workout does not have yet. An imported session is judged against the workout too.</p>
+      </header>
+      <div class="split even">
+        <div class="copy stack">
+          <h3>No move for</h3>
+          <ul class="rows">
+            <li><span class="r-text">A lift you keep with Keep on Today.</span></li>
+            <li><span class="r-text">A lift whose workout already has other numbers: you, the AI trainer (iOS 27) or an assistant saved them.</span></li>
+            <li><span class="r-text">A deload session.</span></li>
+            <li><span class="r-text">An account without Block Pro.</span></li>
+          </ul>
+        </div>
+        <div class="copy stack">
+          <h3>Loads your gym can make</h3>
+          <p>A new load is always one your plates can make. When the next step needs a plate you do not have, the rulebook picks the next load you can build. When no load is within reach, the lift holds.</p>
+          <p class="more"><a href="/plates/">Open the plate calculator</a></p>
+        </div>
+      </div>
+      <div class="cta" data-store="site-progression"><span class="soon">Coming soon to the App Store</span></div>
+      <p class="fine end-note">The lamps and the rulebook are part of Block Pro: $4.99 a month, or $39.99 a year with a one-week free trial for new subscribers.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <a class="foot-mark" href="/"><svg class="logo" viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+      <nav class="links" aria-label="Site">
+        <a href="/switch/">Switch from Hevy</a>
+        <a href="/progression/">Progression</a>
+        <a href="/plates/">Plate calculator</a>
+        <a href="/trainer/">The AI trainer</a>
+        <a href="/assistants/">Connect an assistant</a>
+        <a href="/claude-key/">Your Claude key</a>
+        <a href="/january/">January</a>
+        <a href="/creators/">Creators</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <nav class="links" aria-label="Legal" style="margin-bottom:12px">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+        <a href="/support.html">Support</a>
+      </nav>
+      <p>© 2026 Matthew Dumas</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

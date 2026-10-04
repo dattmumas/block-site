@@ -1,0 +1,245 @@
+/* The AI guides: /trainer/, /assistants/ and /claude-key/. Load after landing.css; the tokens,
+   the type and the shared parts (.sec, .split, .rows, .qa, .shot, .tag, tables) come from it.
+   design/site-theme.md is the system.
+
+   A guide is a coach's notes on one way to use AI with the log. The one bold element is the
+   walk-through: each step's number stands on an iron block, and the blocks of a sequence stack
+   down the page. Everything else stays quiet: the lifter's requests are whiteboard bubbles,
+   samples of the app are drawn on whiteboard panels, and rules sit between rows. */
+
+/* The page: a little tighter than the home page between sections */
+.guide .sec { padding-top: clamp(72px, 8.4vw, 120px); }
+.guide .sec-head { margin-bottom: clamp(28px, 3.6vw, 44px); }
+.guide .sec-head .fine { margin-top: -6px; }
+.guide .copy p + p { margin-top: 0; }
+.guide .stack { gap: 18px; }
+.guide main .wrap > * { min-width: 0; }
+
+/* Subheads inside a section */
+.sub-head { margin: clamp(44px, 5.4vw, 64px) 0 18px; display: grid; gap: 10px; max-width: var(--measure); }
+.copy h3, .stack > h3 { font-stretch: 112%; font-weight: 780; font-size: 20px; letter-spacing: -0.01em; line-height: 1.2; }
+.stack > h3 + p { margin-top: -8px; }
+
+/* Literal words from the app or a tool: a tool name, a key's start */
+.guide code:not(.cmd), .guide .ck-key {
+  font-family: var(--mono); font-size: 0.86em; color: var(--iron);
+  background: var(--board); border-radius: 3px; padding: 1px 5px 2px; white-space: nowrap;
+}
+.guide .ck-key { white-space: normal; overflow-wrap: anywhere; }
+/* Words the app shows, quoted in a sentence */
+.eg, .ck-msg { color: var(--iron); font-weight: 520; }
+
+/* The guides: three blocks side by side, the open one in iron */
+.guide-nav { grid-area: gnav; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.guide-nav .gn-label { font-size: 14px; font-weight: 640; color: var(--steel); }
+.guide-nav .gn-links { display: flex; gap: 4px; }
+.guide-nav a {
+  display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px;
+  border-radius: 3px; background: var(--board); color: var(--iron);
+  font-size: 15px; font-weight: 650; line-height: 1.2; text-decoration: none; text-align: center;
+}
+.guide-nav a:hover { box-shadow: inset 0 0 0 1.5px var(--iron); }
+.guide-nav a[aria-current="page"] { background: var(--iron); color: var(--board); box-shadow: none; }
+@media (max-width: 719px) {
+  .guide-nav { gap: 8px; }
+  .guide-nav .gn-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .guide-nav a { min-height: 52px; padding: 6px 8px; font-size: 14px; }
+}
+
+/* The top of a guide: the guides, the title and the way in on the left, the app's screen on the
+   right; the page's contents under the title. On a phone the screen comes before the contents. */
+.guide-hero { padding-top: clamp(8px, 1.6vw, 20px); }
+.guide-hero .wrap { display: grid; gap: 36px; grid-template-areas: "gnav" "intro" "shot" "toc"; align-items: start; }
+.guide-hero .intro { grid-area: intro; max-width: 760px; gap: 22px; padding-top: clamp(4px, 2vw, 28px); }
+.guide-hero h1 { font-size: clamp(42px, 5.5vw, 78px); }
+.guide-hero h1 .ln { display: block; }
+.guide-hero .needs { color: var(--steel); font-size: 15.5px; line-height: 1.5; max-width: 56ch; }
+.guide-hero .cta { margin-top: 2px; }
+.guide-hero .shot { grid-area: shot; justify-self: start; width: min(100%, 320px); }
+.guide-hero .toc { grid-area: toc; }
+@media (min-width: 1024px) {
+  .guide-hero .wrap {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-areas: "gnav gnav" "intro shot" "toc shot";
+    grid-template-rows: auto auto 1fr;
+    column-gap: clamp(56px, 7vw, 112px); row-gap: 44px;
+  }
+  .guide-hero .shot { justify-self: end; width: 340px; }
+}
+
+/* On this page: the sections in order, two columns once there is room */
+.toc { display: grid; gap: 12px; align-content: start; max-width: 760px; }
+.toc h2 { font-stretch: 112%; font-weight: 760; font-size: 17px; letter-spacing: -0.01em; line-height: 1.2; }
+.toc ul { display: grid; margin: 0; padding: 0; list-style: none; border-bottom: 1.5px solid var(--mortar); }
+.toc li { border-top: 1.5px solid var(--mortar); }
+.toc a {
+  display: flex; align-items: center; min-height: 44px; padding: 8px 0;
+  color: var(--iron); font-size: 15.5px; font-weight: 560; line-height: 1.3; text-decoration: none;
+}
+.toc a:hover { text-decoration: underline; text-decoration-color: var(--iron); }
+/* Down the first column, then the second: --rows is half the list, set on the list */
+@media (min-width: 600px) {
+  .toc ul { grid-auto-flow: column; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(var(--rows, 6), auto); column-gap: 32px; }
+}
+
+/* What you can do, and other titled points: two columns of rows */
+.can, .topics { display: grid; margin: 0; padding: 0; list-style: none; border-bottom: 1.5px solid var(--mortar); }
+.can > li, .topics > li { display: grid; gap: 8px; align-content: start; padding: 22px 0 24px; border-top: 1.5px solid var(--mortar); }
+.can .c-title, .topics h3 { font-stretch: 112%; font-weight: 780; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em; color: var(--iron); }
+.can .c-text, .topics p, .topics li li { color: var(--steel); font-size: 16px; line-height: 1.55; max-width: var(--measure); }
+.can .c-text strong, .topics strong { color: var(--iron); }
+.topics p + p { margin-top: 0; }
+.topics ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; list-style: square; }
+.topics ul li::marker { color: var(--iron); }
+@media (min-width: 900px) {
+  .can, .topics.two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(40px, 5vw, 72px); }
+}
+.also { margin-top: 28px; }
+.after { margin-top: clamp(32px, 4vw, 44px); }
+
+/* Things to ask: what you type, as the chat's bubble, beside what comes back */
+.asks { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--mortar); }
+.asks > li { display: grid; gap: 12px; padding: 20px 0 22px; border-bottom: 1.5px solid var(--mortar); }
+.asks .q {
+  justify-self: start; max-width: 100%; margin: 0;
+  background: var(--board); color: var(--iron); border-radius: 18px 18px 18px 5px;
+  padding: 11px 17px 12px; font-size: 16.5px; line-height: 1.4; font-weight: 520;
+}
+.asks .a { color: var(--steel); font-size: 16px; line-height: 1.55; max-width: var(--measure); margin: 0; }
+.asks .a strong { color: var(--iron); }
+@media (min-width: 900px) {
+  .asks > li { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: clamp(32px, 4vw, 64px); align-items: start; }
+  .asks .a { padding-top: 11px; }
+}
+
+/* A walk-through: the steps of one task, in order. Each number stands on an iron block, and
+   the app's screen for a step sits beside it, in a column of its own. */
+.walk { margin: 0; padding: 0; list-style: none; counter-reset: step; border-top: 1.5px solid var(--mortar); }
+.walk > li {
+  counter-increment: step; display: grid; grid-template-columns: 46px minmax(0, 1fr); grid-auto-columns: 280px;
+  column-gap: 20px; padding: 26px 0 30px; border-bottom: 1.5px solid var(--mortar);
+}
+.walk > li::before {
+  content: counter(step); grid-column: 1; grid-row: 1 / span 2; align-self: start;
+  display: grid; place-items: center; width: 46px; height: 30px; border-radius: 3px;
+  background: var(--iron); color: var(--board);
+  font: 820 21px/1 var(--text); font-stretch: 62%; font-variant-numeric: lining-nums tabular-nums;
+}
+.walk .t { grid-column: 2; display: grid; gap: 10px; align-content: start; max-width: var(--measure); }
+.walk .t > p + p, .topics li > p + p, .guide .stack > p + p { margin-top: 0; }
+.walk h3 { margin: 1px 0 2px; }
+.walk .t p, .walk .t li { color: var(--steel); }
+.walk .t p strong, .walk .t li strong { color: var(--iron); }
+.walk .t ul, .walk .t ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.walk .t ul { list-style: square; }
+.walk .t ul li::marker, .walk .t ol li::marker { color: var(--iron); }
+.walk .t ol li::marker { font-weight: 700; }
+.walk .t .note, .walk .t .cmd { margin-top: 4px; }
+.walk > li > .shot { grid-column: 2; margin-top: 26px; justify-self: start; width: min(100%, 280px); }
+@media (min-width: 900px) {
+  .walk > li { column-gap: 28px; }
+  .walk > li > .shot { grid-column: 3; grid-row: 1 / span 2; margin: 0 0 0 clamp(12px, 3vw, 44px); }
+  /* Steps with no screens: two a row, read across. A step with a screen takes the whole row. */
+  .walk.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(40px, 5vw, 72px); }
+  .walk.cols > li:not(.no-shot) { grid-column: 1 / -1; grid-template-columns: 46px minmax(0, 600px); }
+}
+@media (max-width: 559px) {
+  .walk > li { grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; }
+  .walk > li::before { width: 38px; height: 28px; font-size: 19px; }
+}
+/* A walk-through beside one screen that stays in view while the steps scroll */
+.walk-split > div { min-width: 0; }
+@media (min-width: 768px) { .shot.sticky { position: sticky; top: 24px; } }
+/* A short sequence of one-line steps */
+.walk.short > li { padding: 16px 0 18px; align-items: center; }
+.walk.short > li::before { grid-row: 1; }
+.walk.short .t p { color: var(--iron); }
+
+/* A note at the point of decision. An iron edge marks the one that changes what you do. */
+.note { background: var(--board); border-radius: 4px; padding: 13px 18px 14px; color: var(--steel); font-size: 16px; line-height: 1.5; max-width: var(--measure); }
+.note strong { color: var(--iron); }
+.note.action { border-left: 5px solid var(--iron); padding-left: 18px; color: var(--iron); }
+.note.after { margin-top: 28px; }
+
+/* A command or an address to copy */
+.cmd {
+  display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  background: var(--board); border-radius: 4px; padding: 13px 16px 14px;
+  font: 500 14.5px/1.6 var(--mono); color: var(--iron); white-space: pre-wrap; overflow-wrap: break-word;
+}
+
+/* A sample answer, drawn as the chat shows it, on a whiteboard panel: your question, the
+   trainer's prose, the papers it cites, then the proposal with its buttons. */
+.answer { display: grid; gap: 16px; align-content: start; margin: 0; width: 100%; max-width: 480px; background: var(--board); border-radius: 6px; padding: clamp(18px, 2.4vw, 26px); }
+.answer .q { justify-self: end; max-width: 88%; margin: 0; background: var(--wall); color: var(--iron); border-radius: 18px 18px 5px 18px; padding: 10px 15px 11px; font-size: 16px; line-height: 1.4; font-weight: 520; }
+.answer .prose { color: var(--iron); font-size: 16px; line-height: 1.45; }
+.answer figcaption { color: var(--steel); font-size: 14px; line-height: 1.45; padding-top: 2px; border-top: 1.5px solid var(--board-rule); padding-top: 12px; }
+.refs { display: grid; gap: 8px; }
+.refs .r-head { font-size: 13.5px; font-weight: 650; color: var(--steel); }
+.refs p { display: grid; gap: 1px; margin: 0; }
+.refs a { font-size: 15px; font-weight: 650; justify-self: start; }
+.refs span { color: var(--steel); font-size: 14px; }
+.proposal { display: grid; gap: 10px; border: 1.5px solid var(--mortar); border-radius: 6px; padding: 16px 16px 14px; }
+.proposal .p-title { font-size: 13.5px; font-weight: 650; color: var(--steel); }
+.proposal .p-name { font-stretch: 125%; font-weight: 860; font-size: 24px; letter-spacing: -0.02em; line-height: 1; color: var(--iron); }
+.proposal .p-sum { color: var(--steel); font-size: 14px; margin: -2px 0 0; }
+.proposal ul { margin: 0; padding: 0; list-style: none; }
+.proposal li { padding: 10px 0; border-top: 1.5px solid var(--board-rule); color: var(--iron); font-size: 15px; line-height: 1.4; }
+.proposal .p-actions { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 2px; }
+.proposal .p-actions span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 4px; font-size: 14.5px; font-weight: 700; color: var(--iron); box-shadow: inset 0 0 0 1.5px var(--iron); }
+.proposal .p-actions span.primary { background: var(--iron); color: var(--board); box-shadow: none; }
+
+/* Prices: what is billed on the left, the price in narrow numbers on the right */
+.prices { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--mortar); }
+.prices > li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 20px; align-items: center; padding: 13px 0 14px; border-bottom: 1.5px solid var(--mortar); }
+.prices .p-what { display: grid; gap: 2px; }
+.prices .r-title { font-weight: 700; color: var(--iron); }
+.prices .r-text { color: var(--steel); font-size: 15px; line-height: 1.45; }
+.prices .num { font-size: 40px; color: var(--iron); text-align: right; }
+.assume { margin: 20px 0 0; padding-left: 20px; display: grid; gap: 6px; list-style: square; max-width: var(--measure); }
+.assume li { color: var(--steel); font-size: 15px; line-height: 1.5; }
+.assume li::marker { color: var(--iron); }
+.h3-gap { margin-top: 14px; }
+@media (max-width: 719px) {
+  .ck-est tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; }
+  .ck-est th[scope="row"] { grid-column: 1 / -1; }
+  .ck-est td.end { text-align: left; }
+}
+/* Messages the app shows, quoted as the question of a row */
+.qa.quotes .q { font-stretch: 100%; font-weight: 650; font-size: 17px; line-height: 1.4; letter-spacing: 0; }
+
+/* Tables: who answers, what is sent, the tools, the estimates */
+.guide .data th[scope="row"] { font-weight: 700; color: var(--iron); }
+.guide .data td { color: var(--iron); }
+.guide .data td.steel, .compare td { color: var(--steel); }
+.compare th[scope="row"], .compare td { font-size: 15.5px; line-height: 1.5; }
+.compare td a { font-weight: 600; white-space: nowrap; }
+.tools th[scope="row"] { white-space: nowrap; }
+.tools td.kind { white-space: nowrap; font-weight: 650; }
+@media (min-width: 720px) {
+  .compare th[scope="row"] { width: 22%; }
+  .tools th[scope="row"] { width: 30%; }
+  .tools td.kind { width: 13%; }
+}
+@media (max-width: 719px) {
+  .tools tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; align-items: baseline; }
+  .tools td.kind { text-align: right; font-size: 13px; color: var(--steel); }
+  .tools td.kind::before, .tools td.desc::before { content: none; }
+  .tools td.desc { grid-column: 1 / -1; }
+}
+
+/* The other guides, as two whiteboard panels */
+.guide-links { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.guide-links a { display: grid; gap: 8px; height: 100%; padding: clamp(20px, 2.4vw, 28px); border-radius: 6px; background: var(--board); color: var(--iron); text-decoration: none; }
+.guide-links .g-title { font-stretch: 125%; font-weight: 860; font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.02em; line-height: 1.05; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; text-decoration-color: var(--mortar); }
+.guide-links .g-text { color: var(--steel); font-size: 16px; line-height: 1.5; max-width: var(--measure); }
+.guide-links a:hover .g-title { text-decoration-color: currentColor; }
+@media (min-width: 760px) { .guide-links { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; } }
+
+/* The site's header marks the AI section on all three guides */
+.nav .links a[aria-current="true"] { color: var(--iron); border-bottom-color: var(--iron); }
+
+/* Apple's model on Private Cloud Compute needs an Apple entitlement that is not granted
+   yet (MD_PRIVATE_CLOUD_COMPUTE = NO), so the pages hide what they say about it. Delete
+   this rule when the entitlement ships. Each page must read correctly with it hidden. */
+.pcc { display: none !important; }

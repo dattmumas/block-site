@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connect Block</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#d9d8d2">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https: data:; connect-src https://nxpgkslswhqsedttcrqv.supabase.co; form-action 'none'; base-uri 'none'">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="../"><svg viewBox="272 178 500 668" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M312,178 H562 A150,150 0 0 1 712,328 V348 A150,150 0 0 1 562,498 H312 A40,40 0 0 1 272,458 V218 A40,40 0 0 1 312,178 Z M420,300 H554 A38,38 0 0 1 592,338 V338 A38,38 0 0 1 554,376 H420 A38,38 0 0 1 382,338 V338 A38,38 0 0 1 420,300 Z"/><path fill="#2E6FE8" fill-rule="evenodd" d="M312,526 H612 A160,160 0 0 1 772,686 V686 A160,160 0 0 1 612,846 H312 A40,40 0 0 1 272,806 V566 A40,40 0 0 1 312,526 Z M420,648 H614 A38,38 0 0 1 652,686 V686 A38,38 0 0 1 614,724 H420 A38,38 0 0 1 382,686 V686 A38,38 0 0 1 420,648 Z"/></svg>Block</a>
+  <nav aria-label="Legal"><a href="../privacy.html">Privacy</a><a href="../support.html">Support</a></nav>
+</header>
+<main class="consent">
+  <h1>Connect an assistant</h1>
+  <p id="error" class="error" role="alert" hidden></p>
+
+  <section id="missing" hidden>
+    <p class="lead">This page opens from an assistant, when you connect it to Block.</p>
+    <p>In your assistant, such as Claude, add Block as a connector. Use the address in the app: Today &gt; Settings &gt; AI &gt; Connect an assistant.</p>
+  </section>
+
+  <section id="signin" hidden>
+    <p class="lead">Sign in with your Block account to connect your assistant.</p>
+    <form id="email-form" class="stack" novalidate>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" inputmode="email" required>
+      <button type="submit" id="send-code">Send code</button>
+    </form>
+    <form id="code-form" class="stack" hidden novalidate>
+      <p id="code-sent" class="muted"></p>
+      <label for="code">Code</label>
+      <input id="code" type="text" autocomplete="one-time-code" inputmode="numeric" maxlength="10" required>
+      <button type="submit">Sign in</button>
+    </form>
+    <form id="password-form" class="stack" hidden novalidate>
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button type="submit">Sign in</button>
+    </form>
+    <p><a href="#" id="use-password" class="alt">Use a password instead</a></p>
+    <p class="muted">Signed up with Apple? Set a password in the app first, in Today &gt; Settings &gt; AI &gt; Connect an assistant. Then sign in here with the email shown there.</p>
+  </section>
+
+  <section id="ask" hidden>
+    <p class="lead"><strong id="client-name">An assistant</strong> wants to use your Block account.</p>
+    <p class="muted" id="client-where"></p>
+    <div class="scope">
+      <div>
+        <h2>It will be able to</h2>
+        <ul>
+          <li>Read your sessions, workouts, blocks, exercises, body measurements and profile.</li>
+          <li>Log sessions and measurements, and create or change workouts and blocks.</li>
+          <li>Delete a workout or a session when you ask it to.</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h2>It will not be able to</h2>
+        <ul>
+          <li>See your password, make or see API keys, or delete your account.</li>
+        </ul>
+      </div>
+    </div>
+    <p>Connected assistants need Block Pro. What the assistant receives follows its own privacy terms. Disconnect it at any time in the app: Today &gt; Settings &gt; AI &gt; Connected assistants.</p>
+    <p class="muted">Signed in as <span id="who"></span>. <a href="#" id="switch">Not you?</a></p>
+    <div class="actions">
+      <button type="button" id="allow">Allow</button>
+      <button type="button" id="deny" class="secondary">Deny</button>
+    </div>
+  </section>
+
+  <section id="done" hidden>
+    <p class="lead" id="done-text">Returning you to your assistant.</p>
+  </section>
+</main>
+<footer class="foot"><p>© 2026 Matthew Dumas</p></footer>
+<script src="consent.js"></script>
+</body>
+</html>
