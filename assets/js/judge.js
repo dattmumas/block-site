@@ -1,5 +1,5 @@
 /* Block's lamps, copied line by line from lamps() in the app's MCP tools
-   (supabase/functions/_shared/meetday_tools.mjs), which judges as the app's Judge.lamps and the
+   (supabase/functions/_shared/meetday_judge.mjs), which judges as the app's Judge.lamps and the
    server's app.lamps (supabase/tests/lamp_cases.json). Loads are in kg, as the app saves them.
    Loads as a classic script in the browser (window.BlockJudge) and with require() in node
    (tools/site/lamps_test.mjs checks it against the MCP tools' lamps() on the demo's inputs). */

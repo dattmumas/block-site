@@ -196,6 +196,8 @@
   }
 
   // MARK: Loading
+  // For the ad spots only: the app no longer shows the plates to change, so these two
+  // have no Swift copy now.
 
   /** Plates to take off and put on, per side, going from one load to the next. */
   function change(oldPlates, newPlates) {
