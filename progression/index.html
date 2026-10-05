@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Good lifts move you up: progression in Block</title>
-<meta name="description" content="How three lamps judge a set in Block, and how the rulebook sets your next loads. Lift a set in the demo and see the lamps and the next load.">
+<title>Next targets from what you lifted: progression in Block</title>
+<meta name="description" content="How three lamps judge a set in Block, and how the AI trainer sets your next loads from what you lifted. Lift a set in the demo and see the lamps.">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#d9d8d2">
 <link rel="canonical" href="https://block.lnkd.world/progression/">
@@ -12,17 +12,17 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Block">
-<meta property="og:title" content="Good lifts move you up">
-<meta property="og:description" content="Three lamps judge every planned set. Every set good, the load goes up a step. A red lamp holds it. Try a set against the rulebook.">
+<meta property="og:title" content="Next targets from what you lifted">
+<meta property="og:description" content="Three lamps judge every planned set. After the session, the AI trainer sets each lift's next load and reps from what you lifted. Try a set against the lamps.">
 <meta property="og:url" content="https://block.lnkd.world/progression/">
 <meta property="og:image" content="https://block.lnkd.world/assets/og/progression.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The words Good lifts move the bar up, tagged Pro, beside a Next targets card: Back Squat 195 up 10, Romanian Deadlift 235 held, Bench Press 165 reset, and Walking Lunge 30 with one more rep.">
+<meta property="og:image:alt" content="The words Next targets from what you lifted, tagged Pro, beside the trainer's Next targets card for four lifts, each with its new load and its reason.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Good lifts move you up">
-<meta name="twitter:description" content="Three lamps judge every planned set. Every set good, the load goes up a step. A red lamp holds it. Try a set against the rulebook.">
-<meta name="twitter:image:alt" content="The words Good lifts move the bar up, tagged Pro, beside a Next targets card: Back Squat 195 up 10, Romanian Deadlift 235 held, Bench Press 165 reset, and Walking Lunge 30 with one more rep.">
+<meta name="twitter:title" content="Next targets from what you lifted">
+<meta name="twitter:description" content="Three lamps judge every planned set. After the session, the AI trainer sets each lift's next load and reps from what you lifted. Try a set against the lamps.">
+<meta name="twitter:image:alt" content="The words Next targets from what you lifted, tagged Pro, beside the trainer's Next targets card for four lifts, each with its new load and its reason.">
 <meta name="twitter:image" content="https://block.lnkd.world/assets/og/progression.png">
 <!-- smart-app-banner -->
 <link rel="preload" href="/fonts/Archivo-VF.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,8 +54,8 @@
   <section class="page-hero" aria-labelledby="h-page">
     <div class="wrap">
       <div class="intro">
-        <h1 id="h-page">Good lifts move you up <span class="tag">Pro</span></h1>
-        <p class="lead">Three lamps judge each planned set: reps, load and effort. After the session, the rulebook works out each lift's next load, and Start session saves it to the workout.</p>
+        <h1 id="h-page">Next targets from what you lifted <span class="tag">Pro</span></h1>
+        <p class="lead">Three lamps judge each planned set: reps, load and effort. After the session, the AI trainer reads every set and proposes each lift's next load and reps. Each line you approve is saved to the workout.</p>
         <div class="cta" data-store="site-progression"><span class="soon">Coming soon to the App Store</span></div>
       </div>
     </div>
@@ -65,10 +65,10 @@
     <div class="wrap">
       <header class="sec-head">
         <h2 id="h-try">Lift the last set</h2>
-        <p class="lead">Sets 1 and 2 were good lifts. Change set 3, then read the lamps and the next load.</p>
+        <p class="lead">Sets 1 and 2 were good lifts. Change set 3, then read the lamps.</p>
       </header>
 
-      <p class="fine" id="demo-static">The demo needs JavaScript. In short: every set good, the load goes up a step. Any red lamp, the load holds. A second red lamp in a row at the same load resets it about 10%.</p>
+      <p class="fine" id="demo-static">The demo needs JavaScript. In short: three white lamps make a good lift, and one red lamp makes a no lift. After the session, the AI trainer reads every set and sets the next targets.</p>
 
       <div class="demo" id="demo" role="group" hidden aria-labelledby="h-try">
         <div class="d-sets">
@@ -133,18 +133,18 @@
               <label><input type="radio" name="d-rpe" value="10"><span>10</span></label>
             </div>
           </fieldset>
-          <label class="toggle"><input type="checkbox" id="d-held"><span class="sw" aria-hidden="true"></span><span class="t">The last session had a red lamp at this load<small>A second red lamp in a row at the same load resets the lift.</small></span></label>
         </div>
 
         <div class="d-card">
-          <p class="label">Next session</p>
+          <p class="label">Set 3 on the bar</p>
           <div class="card-line">
             <span class="heavy">Back Squat</span>
-            <span class="why" id="d-why">3 good lifts at RPE 7.</span>
-            <div class="declared"><span class="num" id="d-next">195</span><span class="ct up" id="d-tag">+10</span></div>
+            <span class="why" id="d-lifted">185 × 8, no RPE</span>
+            <div class="declared"><span class="num" id="d-shown">185</span></div>
           </div>
           <div class="bar-box" id="d-bar"></div>
-          <p class="label chalk" id="d-plates">45 + 25 + 5 per side</p>
+          <p class="label chalk" id="d-plates">45 + 25 per side</p>
+          <p class="fine">The trainer reads all three sets for the next targets. Until you approve them, the next session starts at the numbers you lifted with Block Pro, or at the workout's numbers without it.</p>
         </div>
         <p class="sr-only" aria-live="polite" id="d-status"></p>
       </div>
@@ -178,37 +178,32 @@
     </div>
   </section>
 
-  <section class="sec" id="rulebook" aria-labelledby="h-rulebook">
+  <section class="sec" id="next" aria-labelledby="h-next">
     <div class="wrap">
       <header class="sec-head">
-        <h2 id="h-rulebook">Five rules set the next loads <span class="tag">Pro</span></h2>
-        <p class="lead">After a session of a workout, the rulebook works out each lift's call. Today shows it, and Start session saves it to the workout.</p>
+        <h2 id="h-next">The trainer sets the next targets <span class="tag">Pro</span><span class="tag">iOS 27</span></h2>
+        <p class="lead">After you save a session, the app asks the AI trainer for the workout's next targets. The trainer reads each set: the load, the reps, the RPE and the lamps. It also reads your notes on the lift, the rep range and the week of the block.</p>
       </header>
       <div class="split even">
         <div class="copy stack">
-          <table class="rulebook">
-            <caption class="sr-only">The five rules and the call each one writes</caption>
+          <table class="rules">
+            <caption class="sr-only">How the trainer sets each lift's next load and reps</caption>
             <tbody>
               <tr><th scope="row">1</th><td>A good lift: all reps, full load, and RPE at or under the target RPE.</td><td class="calls"><span class="lamps xs" role="img" aria-label="Three white lamps"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
-              <tr><th scope="row">2</th><td>Every set a good lift: the load goes up a step.<span class="sub">10 lb or 5 kg for a big lower-body lift, 5 lb or 2.5 kg for any other lift.</span></td><td class="calls"><span class="ct up">+10</span></td></tr>
-              <tr><th scope="row">3</th><td>Any red lamp: same load next time.</td><td class="calls"><span class="ct hold">Hold</span></td></tr>
-              <tr><th scope="row">4</th><td>A second red lamp in a row at the same load: reset about 10% and build back.</td><td class="calls"><span class="ct reset">Reset</span></td></tr>
-              <tr><th scope="row">5</th><td>Deload week: a lighter bar and fewer sets.<span class="sub">Start saves the step earned before it. The deload's loads are for that week only.</span></td><td class="calls"><span class="ct deload">Deload</span></td></tr>
+              <tr><th scope="row">2</th><td>Every set a good lift at the top of its range: more load, and the reps start again at the bottom of the range.<span class="sub">The lift's step: 10 lb or 5 kg for a big lower-body lift, 5 lb or 2.5 kg for any other lift. More when your note says so.</span></td><td class="calls"><span class="ct up">+10</span></td></tr>
+              <tr><th scope="row">3</th><td>A set under the top of the range: more reps at the same load, or more load when your sets show you are ready.</td><td class="calls"><span class="ct up">Reps +1</span></td></tr>
+              <tr><th scope="row">4</th><td>A hard session (RPE over the target, a red lamp), pain, or work where more is not the point: the lift can hold, and the line says why. A whole workout can hold.</td><td class="calls"><span class="ct same">Hold</span></td></tr>
+              <tr><th scope="row">5</th><td>After a session of good lifts, the load does not go down. A lower load comes only after misses, for a deload, or when you ask, and the line says why.</td><td class="calls"><span class="ct same">Same</span></td></tr>
+              <tr><th scope="row">6</th><td>Deload week: Today marks it, and the trainer sets its lighter numbers for that session only.</td><td class="calls"><span class="ct deload">Deload</span></td></tr>
             </tbody>
           </table>
-          <p>In a rep range, reps come first. Every set good adds a rep, with the call <span class="nowrap"><span class="ct up">Reps +1</span>.</span> At the top of the range, the load goes up a step and the reps start again at the bottom.</p>
-          <p>A big lower-body lift is a weight-and-reps lift on a barbell, a machine or plates for the quads, glutes or hamstrings, and not a curl, extension, kickback, abduction, adduction, raise or calf lift. A lift you set a step for moves by its own step.</p>
-          <p>A load heavier than planned counts when you lift it for the reps on at least half the sets planned at the top load. The next step starts from it.</p>
+          <p>A note on the lift that names the next step comes first. With “Felt light, can step 20 next time”, the next load is 20 more.</p>
         </div>
         <div class="copy stack">
-          <h3>Other calls</h3>
-          <ul class="legend">
-            <li><span class="ct same">Same</span><span>The load does not move.</span></li>
-            <li><span class="ct plain">Set</span><span>The first session of a lift with no planned load sets it, from your heaviest work set.</span></li>
-            <li><span class="ct plain">Keep</span><span>Hold a lift's row on Today and choose Keep: it stays where it is.</span></li>
-            <li><span class="ct plain">New</span><span>On Today: a lift with no session yet.</span></li>
-          </ul>
-          <p>Change load sets another load for one session. The workout keeps its own numbers, and the next target comes from what you lifted.</p>
+          <h3>Approve each line</h3>
+          <p>The trainer's answer shows one line per lift: the numbers now, the new numbers and the reason. <strong>Approve</strong> saves a line to the workout. <strong>Reject</strong> leaves the lift as it is. <strong>Approve all</strong> and <strong>Reject all</strong> decide the rest. A hold needs no decision, and nothing changes until you approve.</p>
+          <p>The app checks each line. A line that lowers a load after a session of good lifts, or keeps a load after every set reached the top of its range, goes back to the trainer, unless the trainer gives the reason.</p>
+          <p>A lift with a set logged in the open session is done for today. The trainer does not change it. Its next targets come after you save the session.</p>
         </div>
       </div>
     </div>
@@ -217,27 +212,27 @@
   <section class="sec" id="when" aria-labelledby="h-when">
     <div class="wrap">
       <header class="sec-head">
-        <h2 id="h-when">From the last session</h2>
-        <p class="lead">The calls come from the workout's last session. The next Start session saves the ones the workout does not have yet. An imported session is judged against the workout too.</p>
+        <h2 id="h-when">Not approved, not changed</h2>
+        <p class="lead">The app does not change a load or reps by itself. With Block Pro, until you approve new targets, the next session starts at the numbers you last lifted, and Today says: No new targets from the trainer. Without Pro, it starts at the workout's numbers.</p>
       </header>
       <div class="split even">
         <div class="copy stack">
-          <h3>No move for</h3>
+          <h3>No new targets when</h3>
           <ul class="rows">
-            <li><span class="r-text">A lift you keep with Keep on Today.</span></li>
-            <li><span class="r-text">A lift whose workout already has other numbers: you, the AI trainer (iOS 27) or an assistant saved them.</span></li>
-            <li><span class="r-text">A deload session.</span></li>
-            <li><span class="r-text">An account without Block Pro.</span></li>
+            <li><span class="r-text">The iPhone has no connection, or the trainer had an error.</span></li>
+            <li><span class="r-text">The month's messages are used up, or you have not allowed Claude yet.</span></li>
+            <li><span class="r-text">The iPhone is on iOS 26 or earlier.</span></li>
           </ul>
+          <p>Tap <strong>Ask trainer</strong> on Today to ask again. You can change a workout at any time in the workout editor, or with a connected assistant such as Claude.</p>
         </div>
         <div class="copy stack">
           <h3>Loads your gym can make</h3>
-          <p>A new load is always one your plates can make. When the next step needs a plate you do not have, the rulebook picks the next load you can build. When no load is within reach, the lift holds.</p>
+          <p>The trainer uses only loads your plates can make. Today shows each lift's last result and a tag for the change: <span class="nowrap"><span class="ct up">+10</span>,</span> <span class="nowrap"><span class="ct up">Reps +1</span>,</span> <span class="nowrap"><span class="ct same">Same</span></span> or <span class="nowrap"><span class="ct plain">New</span>.</span></p>
           <p class="more"><a href="/plates/">Open the plate calculator</a></p>
         </div>
       </div>
       <div class="cta" data-store="site-progression"><span class="soon">Coming soon to the App Store</span></div>
-      <p class="fine end-note">The lamps and the rulebook are part of Block Pro: $4.99 a month, or $39.99 a year with a one-week free trial for new subscribers.</p>
+      <p class="fine end-note">The lamps and the AI trainer are part of Block Pro: $4.99 a month, or $39.99 a year with a two-week free trial for new subscribers. The trainer needs iOS 27.</p>
     </div>
   </section>
 </main>

@@ -104,10 +104,10 @@
       </header>
       <ul class="asks">
         <li><p class="q">Read my last 12 weeks in Block and tell me which lift is stalling.</p><p class="a">Claude reads your sessions with <code>list_workouts</code> and each lift's records with <code>exercise_history</code>. It names the lift and shows the numbers. <strong>It changes nothing.</strong></p></li>
-        <li><p class="q">Set my next targets for Upper B from yesterday's session.</p><p class="a">Claude reads the session set by set and the research cards. It proposes each lift's next load and reps, with a source for each. <strong>It saves them with <code>save_routine</code> after you agree.</strong> The app has its own call for each lift, which your next Start saves. A lift Claude saved with other numbers keeps Claude's.</p></li>
+        <li><p class="q">Set my next targets for Upper B from yesterday's session.</p><p class="a">Claude reads the session set by set and the research cards. It proposes each lift's next load and reps (more reps, more load or the same again), with a source for each. <strong>It saves only the lifts you agree to, with <code>save_routine</code>.</strong> The app does not change a load by itself: until Claude or the trainer saves new numbers, the next session starts at the numbers you lifted.</p></li>
         <li><p class="q">Build a 12-week block for my powerlifting competition on 14 March and save it to Block.</p><p class="a">Claude reads your profile and your history, then sets out the workouts and weeks in the chat. <strong>After you agree, it saves each workout with <code>save_routine</code> and the block with <code>save_block</code>.</strong></p></li>
-        <li><p class="q">Log this as today's Lower A: squat 3 × 5 at 315, RDL 3 × 8 at 225, leg press 3 × 12 at 360.</p><p class="a">Claude finds Lower A and each lift, and logs the session with <code>log_workout</code>. <strong>The lamps judge it against Lower A. The next time you start Lower A, the app sets its targets from this session.</strong></p></li>
-        <li><p class="q">Why did my bench hold last Thursday?</p><p class="a">Claude opens the session with <code>get_workout</code> and reads each set's lamps. It tells you which set missed and which lamp was red.</p></li>
+        <li><p class="q">Log this as today's Lower A: squat 3 × 5 at 315, RDL 3 × 8 at 225, leg press 3 × 12 at 360.</p><p class="a">Claude finds Lower A and each lift, and logs the session with <code>log_workout</code>. <strong>The lamps judge it against Lower A. With Block Pro, the next time you start Lower A, each lift starts at the numbers you lifted, until the trainer, you or Claude set new targets.</strong></p></li>
+        <li><p class="q">Why did my bench miss last Thursday?</p><p class="a">Claude opens the session with <code>get_workout</code> and reads each set's lamps. It tells you which set missed and which lamp was red.</p></li>
         <li><p class="q">How many working sets per muscle did I do each week this month?</p><p class="a">Claude counts the sets in your sessions and looks up each lift's muscles with <code>search_exercises</code>. Block marks warm-ups, so Claude can leave them out.</p></li>
         <li><p class="q">I travel next week with dumbbells only. Write hotel versions of Upper A and Lower A.</p><p class="a">Claude finds dumbbell lifts and says what each new workout holds. <strong>It saves them with <code>save_routine</code> under new names</strong>, so your own workouts stay as they are.</p></li>
         <li><p class="q">Change my block to 2 days on, 1 day off, for 8 cycles.</p><p class="a">Claude reads the block with <code>list_routines</code> and says what the change does to its weeks and training days. <strong>Then it saves the rolling cycle with <code>save_block</code>.</strong></p></li>
@@ -129,7 +129,7 @@
           <ol class="walk">
             <li class="no-shot"><div class="t">
               <h3>Open Connect an assistant</h3>
-              <p>In the Block app, tap the gear on Today to open Settings. Under AI, tap <strong>Connect an assistant</strong>.</p>
+              <p>In the Block app, tap the sliders at the top right of Today, Plan or Progress to open Settings. Under AI, tap <strong>Connect an assistant</strong>.</p>
             </div></li>
             <li class="no-shot"><div class="t">
               <h3>Copy Block's address</h3>
@@ -232,12 +232,12 @@
       </div>
       <div class="split even" style="margin-top:40px">
         <div class="stack">
-          <p class="note action"><strong>Changes save when the tool runs.</strong> The AI trainer waits for you to tap Apply. An assistant's tools do not wait. Block asks the assistant to read before it changes anything, and to say what a change does before it makes it.</p>
+          <p class="note action"><strong>Changes save when the tool runs.</strong> The AI trainer waits for you to tap Apply, or Approve on each next target. An assistant's tools do not wait. Block asks the assistant to read before it changes anything, and to say what a change does before it makes it.</p>
           <p class="steel">In Claude, you can set each Block tool's permission in Customize &gt; Connectors. Claude never runs a tool set to Blocked.</p>
         </div>
         <div class="copy stack">
           <p><strong>Without Block Pro</strong>, an assistant can sign in and read Block's help and the research cards. Every other tool answers: Block Pro is required for connected assistants. The connection works again while the account has Pro.</p>
-          <p>Block Pro is $4.99 a month, or $39.99 a year with a one-week free trial for new subscribers.</p>
+          <p>Block Pro is $4.99 a month, or $39.99 a year with a two-week free trial for new subscribers.</p>
           <div class="cta" data-store="site-assistants"><span class="soon">Coming soon to the App Store</span></div>
         </div>
       </div>
@@ -307,7 +307,7 @@
           <tbody>
             <tr><th scope="row">Where</th><td data-label="AI trainer">In the Block app on your iPhone.</td><td data-label="Connected assistant">In Claude or Gemini, on any device that runs it.</td></tr>
             <tr><th scope="row">Needs</th><td data-label="AI trainer">Block Pro and iOS 27.</td><td data-label="Connected assistant">Block Pro, and an account with the assistant.</td></tr>
-            <tr><th scope="row">Changes</th><td data-label="AI trainer">A card with Apply. Nothing changes until you tap it.</td><td data-label="Connected assistant">Saved when a tool runs. Block asks the assistant to say what changes first.</td></tr>
+            <tr><th scope="row">Changes</th><td data-label="AI trainer">A card with Apply, or next targets you approve line by line. Nothing changes until you tap Apply or Approve.</td><td data-label="Connected assistant">Saved when a tool runs. Block asks the assistant to say what changes first.</td></tr>
             <tr><th scope="row">In a session</th><td data-label="AI trainer">Sees the sets you logged and changes the sets you have not.</td><td data-label="Connected assistant">Reads saved sessions only.</td></tr>
             <tr><th scope="row">Messages</th><td data-label="AI trainer">Up to 60 Claude messages a month, within a monthly cost limit. With your own Claude key, Block sets no limit.</td><td data-label="Connected assistant">The limits of your plan with the assistant.</td></tr>
           </tbody>

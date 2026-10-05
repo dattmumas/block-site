@@ -3,7 +3,7 @@
 
    Ground: the painted block wall of a gym. Ink: iron. Raised panels: whiteboard white.
    Brand: the 45 lb plate's blue, from the app icon's lower block. Color otherwise is data:
-   the rulebook's calls, the lamps and the plates. Words are set wide (Archivo at 125%),
+   Today's tags, the lamps and the plates. Words are set wide (Archivo at 125%),
    numbers narrow (Archivo at 62% to 75%), text at normal width: one family, three widths.
    The only decoration is the block: flat rectangles that stack. */
 
@@ -29,7 +29,7 @@
   /* Brand: the 45 lb plate */
   --plate: #2e6fe8;
   --plate-ink: #1d55c0;
-  /* Data: the rulebook's calls (MDCallTag), the lamps (Lights.swift), the bar (PlateBar.swift) */
+  /* Data: Today's tags (MDCallTag), the lamps (Lights.swift), the bar (PlateBar.swift) */
   --up: #1b8a49;
   --hold: #f0b90b;
   --reset: #cf2f25;
@@ -130,7 +130,7 @@ h3 { font-size: clamp(21px, 2vw, 25px); font-weight: 800; letter-spacing: -0.012
 h1 .tag { vertical-align: 0.9em; font-size: 13px; }
 .label .tag { vertical-align: 0.1em; margin-left: 6px; }
 
-/* The rulebook's calls (MDCallTag): +10 and Reps +1 green, Hold yellow, Reset red, Deload blue */
+/* Today's tags (MDCallTag): +10 and Reps +1 green, Same an outline, Deload blue; hold and reset are the old tags' colors */
 .ct {
   display: inline-block;
   vertical-align: middle;
@@ -398,13 +398,13 @@ td.end, th.end { text-align: right; }
 .card tr.still .heavy, .card tr.still .declared .num { color: var(--dust); }
 .card tbody tr:last-child td { border-bottom: 0; padding-bottom: 0; }
 
-/* The rulebook (RulebookView): five rules and the call each writes */
-.rulebook th[scope="row"] { font-stretch: 62%; font-weight: 820; font-size: 26px; color: var(--iron); padding: 14px 0; width: 40px; vertical-align: top; border-bottom: 1.5px solid var(--mortar); line-height: 1; }
-.rulebook td { padding: 15px 0; vertical-align: top; }
-.rulebook td .sub { display: block; color: var(--steel); font-size: 15px; margin-top: 4px; }
-.rulebook td.calls { text-align: right; white-space: nowrap; padding-left: 16px; }
-.rulebook td.calls .ct + .ct { margin-left: 6px; }
-.rulebook td.calls .lamps { vertical-align: middle; }
+/* A numbered table of rules, each with its tag (the progression page) */
+.rules th[scope="row"] { font-stretch: 62%; font-weight: 820; font-size: 26px; color: var(--iron); padding: 14px 0; width: 40px; vertical-align: top; border-bottom: 1.5px solid var(--mortar); line-height: 1; }
+.rules td { padding: 15px 0; vertical-align: top; }
+.rules td .sub { display: block; color: var(--steel); font-size: 15px; margin-top: 4px; }
+.rules td.calls { text-align: right; white-space: nowrap; padding-left: 16px; }
+.rules td.calls .ct + .ct { margin-left: 6px; }
+.rules td.calls .lamps { vertical-align: middle; }
 .legend { display: grid; gap: 0; border-top: 1.5px solid var(--mortar); margin: 0; padding: 0; list-style: none; }
 .legend li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1.5px solid var(--mortar); color: var(--steel); font-size: 15px; }
 .legend li > .ct { justify-self: start; }

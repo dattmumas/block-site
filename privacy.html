@@ -70,7 +70,7 @@
     <div class="wrap">
       <div class="intro">
         <h1 id="h-page">Privacy policy</h1>
-        <p class="effective">Effective September 25, 2026</p>
+        <p class="effective">Effective October 4, 2026</p>
         <p>Block is an iPhone app for logging strength training, operated by Matthew Dumas ("we"). This policy explains what the app collects, why, and the control you have over it. Contact: <a href="mailto:support@lnkd.world">support@lnkd.world</a>.</p>
       </div>
     </div>
@@ -109,14 +109,16 @@
                 <tr><th scope="row">Sessions, sets, blocks, schedules, custom exercises</th><td data-label="Source">You, or tools you connect with an API key</td><td data-label="Purpose">The core function of the app: planned loads, judged sets, history, records and charts</td></tr>
                 <tr><th scope="row">Body measurements (weight, body fat, circumferences)</th><td data-label="Source">You, if you choose to enter them</td><td data-label="Purpose">Measurement history and trend charts</td></tr>
                 <tr><th scope="row">Settings (units, rest time, the plates and bars in your gym)</th><td data-label="Source">You</td><td data-label="Purpose">App behavior and plate math</td></tr>
-                <tr><th scope="row">Block Pro purchases: the plan, its renewal or end date, the App Store transaction ID, and the free trial or offer code of the purchase</th><td data-label="Source">The App Store, when you subscribe or restore</td><td data-label="Purpose">Opens Block Pro on every device you sign in to, and for your API keys and connected assistants. We also count subscriptions per ad keyword and per offer code.</td></tr>
+                <tr><th scope="row">Block Pro purchases: the plan, its renewal or end date, the App Store transaction ID, the free trial or offer code of the purchase, and the screen you bought it from</th><td data-label="Source">The App Store, when you subscribe or restore; the app, for the screen</td><td data-label="Purpose">Opens Block Pro on every device you sign in to, and for your API keys and connected assistants. We also count subscriptions per ad keyword, per offer code and per screen.</td></tr>
+                <tr><th scope="row">Days of Block Pro for a new account: the day they start and the day they end</th><td data-label="Source">Our server, when a new account starts them</td><td data-label="Purpose">Opens Block Pro until the last day. We count how many new accounts lift, repeat a workout and subscribe.</td></tr>
                 <tr><th scope="row">Apple Ads attribution: whether one of our ads in the App Store led to your install, and if so, which ad</th><td data-label="Source">Apple, the first time you open the app (see Apple Ads)</td><td data-label="Purpose">Counts the free trials and subscriptions that each ad keyword brings</td></tr>
-                <tr><th scope="row">Trainer usage: how many trainer messages your account sent to Claude each month, and their size in tokens</th><td data-label="Source">Our server, when the trainer answers with Claude</td><td data-label="Purpose">The monthly allowance of Block Pro. The questions and answers are not stored.</td></tr>
+                <tr><th scope="row">Trainer usage: how many trainer messages your account sent to Claude, when, and their size in tokens</th><td data-label="Source">Our server, when the trainer answers with Claude</td><td data-label="Purpose">The trainer's allowance: Block Pro's each month, or a new account's for its days of Pro. The questions and answers are not stored.</td></tr>
                 <tr><th scope="row">Connected assistants: which assistant you connected and when</th><td data-label="Source">Our sign-in service, when you tap Allow</td><td data-label="Purpose">Lets the assistant act for you until you revoke it</td></tr>
               </tbody>
             </table>
           </div>
           <p>Apple processes the payment for Block Pro. We never receive your payment card or your Apple Account details.</p>
+          <p>When a new account starts days of Block Pro, Block stores the start and end dates with the account. When you buy Block Pro, Block stores which screen you bought it from. Reminder notifications are made on your iPhone; nothing is sent for them. All of this is deleted with the account.</p>
           <p>We do not collect location, contacts, photos, advertising identifiers or browsing history. The app has no ads, no analytics SDKs and no tracking. We do not sell or share your data for advertising.</p>
         </section>
 
@@ -139,10 +141,10 @@
 
         <section id="trainer" aria-labelledby="h-trainer">
           <h2 id="h-trainer">The AI trainer</h2>
-          <p>With Block Pro on iOS 27, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block and your gym. It proposes changes, and they save only when you tap Apply.</p>
+          <p>With Block Pro on iOS 27, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block and your gym. It proposes changes, and they save only when you tap Apply, or Approve on a next target.</p>
           <ul>
             <li>Apple Intelligence: when your iPhone supports it, the trainer answers with Apple's model on Private Cloud Compute. Apple processes the request to answer it and does not store it.</li>
-            <li>Claude by Anthropic: when Apple's model is not available, the trainer can answer with Claude, and only after you allow it in the app. Your question and the training data the trainer needs go to Anthropic through our server. Your name, email and account details are not sent. Anthropic uses the data to answer and does not train its models on it, under its commercial terms. Anthropic deletes it within 30 days, unless it must keep it longer to enforce its usage policy or to comply with the law. You can take the permission back in Today &gt; Settings &gt; AI &gt; AI trainer.</li>
+            <li>Anthropic (Claude): when Apple's model is not available, the trainer can answer with Claude, and only after you allow it in the app. Your question and the training data the trainer needs go to Anthropic through our server. Your name, email and account details are not sent. Anthropic uses the data to answer and does not train its models on it, under its commercial terms. Anthropic deletes it within 30 days, unless it must keep it longer to enforce its usage policy or to comply with the law. You can take the permission back in Today &gt; Settings &gt; AI &gt; AI trainer.</li>
             <li>Your own Claude key: if you add your own Anthropic API key in Today &gt; Settings &gt; AI &gt; Your Claude key, the trainer answers with Claude first. The app sends your question and the training data the trainer needs straight to Anthropic with your key, under your own agreement with Anthropic. The key stays in your iPhone's Keychain. Our server never receives the key, your questions or the answers. Remove the key there at any time; deleting your account also removes it.</li>
           </ul>
           <p>The chat stays on your iPhone, and deleting your account deletes it. Our server does not store your questions or the answers; it counts messages and tokens for the monthly allowance.</p>
