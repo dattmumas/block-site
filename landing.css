@@ -767,7 +767,7 @@ input:focus-visible, select:focus-visible { outline: 3px solid var(--plate); out
   .jan .d b { font-size: 16px; }
 }
 
-/* /january/: the 21 programs. The deload week is a blue tag, as on the block. On a phone each program
+/* /january/: the 17 programs. The deload week is a blue tag, as on the block. On a phone each program
    is a row of its own: the name and summary, then its days and weeks. */
 .programs td .why { display: inline-block; margin-top: 7px; padding: 4px 6px 3px; border-radius: 3px; background: var(--deload); color: var(--iron); font-size: 12px; font-weight: 650; line-height: 1; }
 @media (max-width: 599px) {
