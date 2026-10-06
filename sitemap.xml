@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://block.lnkd.world/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://block.lnkd.world/switch/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://block.lnkd.world/progression/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://block.lnkd.world/plates/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://block.lnkd.world/trainer/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://block.lnkd.world/assistants/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://block.lnkd.world/claude-key/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://block.lnkd.world/january/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://block.lnkd.world/creators/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://block.lnkd.world/assistants/</loc></url>
+  <url><loc>https://block.lnkd.world/claude-key/</loc></url>
+  <url><loc>https://block.lnkd.world/creators/</loc></url>
+  <url><loc>https://block.lnkd.world/</loc></url>
+  <url><loc>https://block.lnkd.world/january/</loc></url>
+  <url><loc>https://block.lnkd.world/plates/</loc></url>
   <url><loc>https://block.lnkd.world/privacy.html</loc></url>
+  <url><loc>https://block.lnkd.world/progression/</loc></url>
   <url><loc>https://block.lnkd.world/support.html</loc></url>
+  <url><loc>https://block.lnkd.world/switch/</loc></url>
+  <url><loc>https://block.lnkd.world/trainer/</loc></url>
 </urlset>

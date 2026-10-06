@@ -1,97 +1,32 @@
-/* Block: the sign-in page an assistant opens (oauth/consent.html). The tokens of
-   design/site-theme.md, as landing.css has them: the painted block wall as the ground, iron
-   type and buttons, whiteboard white for fields and panels, the 45 lb plate's blue for focus.
-   The page's Content-Security-Policy allows this file and the font, and no inline styles. */
-
-@font-face {
-  font-family: "Archivo";
-  src: url("fonts/Archivo-VF.woff2") format("woff2-variations"), url("fonts/Archivo-VF.woff2") format("woff2");
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
-  font-display: swap;
-}
-
-:root {
-  --wall: #d9d8d2;
-  --mortar: #c8c6bf;
-  --board: #f6f6f2;
-  --board-rule: #e1e0da;
-  --iron: #1d1f22;
-  --steel: #4f545a;
-  --plate: #2e6fe8;
-  --plate-ink: #1d55c0;
-  --reset: #cf2f25;
-  --text: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-}
-
-* { box-sizing: border-box; }
-html { background: var(--wall); -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0; min-height: 100vh; display: flex; flex-direction: column;
-  background: var(--wall); color: var(--iron);
-  font: 420 17px/1.55 var(--text); font-stretch: 100%;
-  -webkit-font-smoothing: antialiased;
-}
-[hidden] { display: none !important; }
-p, li { margin: 0; }
-a { color: var(--plate-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-color: rgba(29, 85, 192, 0.35); }
-a:hover { text-decoration-color: currentColor; }
-:focus-visible { outline: 3px solid var(--plate); outline-offset: 3px; border-radius: 2px; }
-strong { font-weight: 680; }
-
-/* One narrow column: the page does one thing */
-.top, .consent, .foot { width: 100%; max-width: 600px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
-.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; padding-bottom: 20px; }
-.top .mark { display: inline-flex; align-items: center; gap: 10px; color: var(--iron); text-decoration: none; font-stretch: 125%; font-weight: 880; font-size: 23px; letter-spacing: -0.03em; line-height: 1; }
-.top .mark svg { width: 20px; height: auto; flex: none; }
+/* The assistant consent screen shares the public site's type and colors.
+   Its authentication markup, scripts and CSP stay independent. */
+body { min-height: 100vh; display: flex; flex-direction: column; }
+.top, .consent, .foot { width: 100%; max-width: 600px; margin-inline: auto; padding-inline: 24px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; }
 .top nav { display: flex; gap: 20px; }
-.top nav a { color: var(--steel); text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 0; }
-.top nav a:hover { color: var(--iron); text-decoration: underline; }
-
-.consent { flex: 1; display: grid; gap: 22px; align-content: start; padding-top: clamp(20px, 6vh, 64px); padding-bottom: 56px; }
-h1, h2 { font-family: var(--text); margin: 0; color: var(--iron); text-wrap: balance; }
-h1 { font-stretch: 125%; font-weight: 860; font-size: clamp(36px, 8vw, 52px); letter-spacing: -0.03em; line-height: 0.98; }
-h2 { font-stretch: 112%; font-weight: 760; font-size: 17px; letter-spacing: -0.01em; line-height: 1.25; }
-.consent section { display: grid; gap: 18px; }
-.lead { font-size: 20px; line-height: 1.45; }
-.muted { color: var(--steel); font-size: 15.5px; }
-
-/* Fields and buttons */
-.stack { display: grid; gap: 10px; }
-label { font-size: 15px; font-weight: 650; color: var(--iron); }
-input {
-  width: 100%; min-height: 52px; padding: 12px 14px;
-  font: 500 18px/1.2 var(--text); color: var(--iron);
-  background: var(--board); border: 1.5px solid var(--steel); border-radius: 4px;
-  appearance: none;
-}
-input:focus-visible { outline: 3px solid var(--plate); outline-offset: 1px; border-color: var(--iron); }
-#code { font-variant-numeric: tabular-nums; letter-spacing: 0.12em; }
-button {
-  display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px;
-  font: 720 17px/1 var(--text); font-stretch: 108%; letter-spacing: -0.005em;
-  color: var(--board); background: var(--iron); border: 0; border-radius: 4px; cursor: pointer;
-}
-button:hover { background: #000; }
-button.secondary { color: var(--iron); background: transparent; box-shadow: inset 0 0 0 2px var(--iron); }
-button.secondary:hover { background: var(--iron); color: var(--board); }
-button:disabled { opacity: 0.45; cursor: default; }
-button:disabled:hover { background: var(--iron); }
-button.secondary:disabled:hover { background: transparent; color: var(--iron); }
-.stack button { margin-top: 6px; }
-.alt { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
-
-/* The request: what the assistant will and will not be able to do, on whiteboard white */
-.scope { display: grid; gap: 18px; background: var(--board); border-radius: 6px; padding: 20px 22px; }
-.scope ul { margin: 8px 0 0; padding: 0 0 0 20px; display: grid; gap: 8px; list-style: square; }
-.scope li { line-height: 1.5; }
-.scope li::marker { color: var(--iron); }
-.scope .no li::marker { color: var(--steel); }
-.scope .no + .no, .scope > div + div { border-top: 1.5px solid var(--board-rule); padding-top: 16px; }
-.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
-
-/* An error, at the top of the page: a red block marks it, as a red lamp marks a miss */
-.error { background: var(--board); border-left: 5px solid var(--reset); border-radius: 4px; padding: 13px 16px; font-weight: 600; line-height: 1.45; }
-
-.foot { padding-bottom: 28px; color: var(--steel); font-size: 14px; }
-.foot p { border-top: 1.5px solid var(--mortar); padding-top: 18px; }
+.top nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--steel); font-size: 14px; text-decoration: none; }
+.top nav a:hover { text-decoration: underline; }
+.consent { flex: 1; display: grid; align-content: start; gap: 24px; padding-top: 36px; padding-bottom: 56px; }
+.consent h1 { font-size: clamp(30px,7vw,42px); }
+.consent h2 { font-size: 17px; letter-spacing: -.01em; }
+.consent section { display: grid; gap: 20px; }
+.consent section p { margin: 0; }
+.consent .lead { font-size: 19px; }
+.consent .muted { font-size: 15px; }
+.consent .stack { gap: 10px; }
+.consent label { font-size: 15px; font-weight: 620; }
+.consent input { width: 100%; font-size: 18px; }
+#code { font-variant-numeric: tabular-nums; letter-spacing: .12em; }
+.consent button { min-height: 48px; padding: 12px 20px; font-weight: 620; color: white; background: var(--plate-ink); border: 1px solid transparent; border-radius: 8px; cursor: pointer; }
+.consent button:hover { background: #1948a4; }
+.consent button.secondary { color: var(--iron); background: transparent; border-color: var(--mortar); }
+.consent button.secondary:hover { background: var(--wash); }
+.consent .stack button { margin-top: 6px; }
+.alt { display: inline-flex; align-items: center; min-height: 44px; }
+.scope { display: grid; gap: 20px; padding: 24px; background: var(--board); border: 1px solid var(--mortar); border-radius: 10px; }
+.scope ul { margin: 12px 0 0; }
+.scope > div + div { padding-top: 20px; border-top: 1px solid var(--mortar); }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.error { padding: 16px; background: white; border-left: 3px solid var(--reset); border-radius: 0 6px 6px 0; }
+.foot { padding-bottom: 24px; font-size: 13px; color: var(--steel); }
+.foot p { border-top: 1px solid var(--mortar); padding-top: 20px; }

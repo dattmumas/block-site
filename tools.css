@@ -1,0 +1,97 @@
+/* Interactive plate calculator and lamp demo. Loaded only by their two pages. */
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; margin: 0 0 10px; }
+.field { display: grid; gap: 10px; }
+input[type=number] { width: 100%; appearance: textfield; font-variant-numeric: tabular-nums; }
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.chips { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+.chip { position: relative; display: block; }
+.chip input, .seg input { position: absolute; opacity: 0; width: 1px; height: 1px; min-height: 0; padding: 0; margin: 0; }
+.chip > span { display: grid; justify-items: center; align-content: center; gap: 6px; min-height: 56px; padding: 8px 4px; background: var(--board); border: 1px solid var(--mortar); border-radius: 6px; cursor: pointer; color: var(--steel); text-align: center; }
+.chip .n { font-size: 20px; font-weight: 600; line-height: 1; }
+.chip .label { font-size: 12px; color: inherit; }
+.chip i { width: 24px; height: 8px; border-radius: 2px; background: var(--swatch,#8c9298); }
+.chip input:checked + span { color: var(--plate-ink); border-color: var(--plate-ink); background: #f0f4fc; }
+.chip input:focus-visible + span { outline: 3px solid var(--plate); outline-offset: 2px; }
+.chip:hover > span { border-color: var(--steel); }
+.seg { display: inline-flex; justify-self: start; align-self: start; border: 1px solid var(--mortar); border-radius: 6px; overflow: hidden; background: var(--board); }
+.seg label { position: relative; display: block; }
+.seg label + label { border-left: 1px solid var(--mortar); }
+.seg span { display: flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: 0 12px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.seg input:checked + span { background: var(--plate-ink); color: white; }
+.seg input:focus-visible + span { outline: 3px solid var(--iron); outline-offset: -5px; }
+.stepper { display: grid; grid-template-columns: 48px minmax(0,1fr) 48px; background: var(--board); border: 1px solid var(--mortar); border-radius: 6px; overflow: hidden; max-width: 280px; }
+.stepper button { font-size: 24px; color: var(--plate-ink); background: transparent; border: 0; min-height: 52px; cursor: pointer; }
+.stepper button:hover { background: var(--wash); }
+.stepper button:focus-visible, .stepper input:focus-visible { outline-offset: -5px; }
+.stepper input { font-size: 26px; font-weight: 650; text-align: center; border: 0; border-inline: 1px solid var(--mortar); border-radius: 0; padding: 0 4px; }
+.bar-box { width: 100%; }
+.bar { width: 100%; height: auto; }
+.bar .plate[fill="#ECEAE4"] { stroke: #b4b2aa; stroke-width: 1px; }
+.big { display: flex; align-items: baseline; gap: 8px; }
+.big .num { font-size: 72px; }
+.big .unit { font-size: 15px; color: var(--steel); }
+.miss { color: var(--reset); font-weight: 600; }
+.nearest { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.nearest .btn { min-height: 44px; padding: 8px 16px; }
+.calc-sec { padding-top: 28px; }
+.calc { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 32px 48px; }
+.calc .controls { display: grid; grid-template-columns: minmax(0,1fr) auto; align-content: start; gap: 22px; grid-column: 1; grid-row: 1 / span 2; }
+.calc-load, .warm { grid-column: 2; }
+.c-bars, .c-rack { grid-column: 1 / -1; }
+.calc-load { display: grid; gap: 16px; background: var(--board); padding: 28px; border: 1px solid var(--mortar); border-radius: 10px; align-content: start; }
+.calc-bar { min-height: 64px; }
+#c-fit, #c-miss { display: grid; gap: 6px; }
+#c-fit .per-side { font-size: 24px; }
+.c-rack .chips { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.c-rack .chip > span { min-height: 78px; align-content: end; padding: 10px 4px; }
+.c-rack .chip i { width: calc(var(--pw) * 1.15px); height: calc(var(--ph) * .32px); }
+.c-rack .chip i.light { box-shadow: inset 0 0 0 1px #b4b2aa; }
+.c-rack .chip input:not(:checked) + span i { background: transparent; box-shadow: inset 0 0 0 1px var(--steel); }
+.c-rack .chip input:not(:checked) + span .n { text-decoration: line-through; }
+.warm { display: grid; gap: 14px; align-content: start; }
+.ladder .step { display: grid; grid-template-columns: 42px minmax(0,1fr) 108px; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--mortar); }
+.ladder .k { font-size: 13px; font-weight: 600; color: var(--steel); }
+.ladder .v { display: grid; gap: 4px; }
+.ladder .num { font-size: 24px; }
+.ladder .label { font-size: 12px; font-weight: 420; }
+.ladder .bar { width: 108px; }
+.lamps { --lamp: 32px; display: inline-flex; align-items: center; gap: 12px; padding: 16px; background: var(--iron); border-radius: 8px; vertical-align: middle; }
+.lamps.xs { --lamp: 8px; gap: 5px; padding: 7px 8px; border-radius: 5px; }
+.lamp { display: block; width: var(--lamp); height: var(--lamp); border-radius: 50%; background: white; flex: none; }
+.lamp.no { background: #ff453a; }
+.lamp.off { background: #535753; }
+.lamps .cell { display: grid; justify-items: center; gap: 10px; min-width: 48px; }
+.lamps .cell .label { color: #eee; font-size: 12px; }
+.lamps .cell.no .label { color: #ff918a; }
+.demo { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-areas: 'sets judge' 'inputs card'; gap: 32px 48px; }
+.d-sets { grid-area: sets; }
+.d-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
+.d-judge { grid-area: judge; display: grid; gap: 16px; align-content: start; justify-items: start; }
+.d-inputs { grid-area: inputs; display: grid; gap: 20px; align-content: start; }
+.d-card { grid-area: card; display: grid; gap: 16px; align-content: start; background: var(--board); padding: 24px; border: 1px solid var(--mortar); border-radius: 8px; }
+.d-steppers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sets { font-size: 14px; }
+.sets th, .sets td { padding: 12px 8px 12px 0; }
+.sets .you { font-weight: 600; }
+.verdict { font-size: 36px; font-weight: 700; letter-spacing: -.03em; }
+.reasons { color: var(--reset); }
+.card-line { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; border-bottom: 1px solid var(--mortar); padding-bottom: 16px; }
+.card-line .why { grid-column: 1; font-size: 14px; color: var(--steel); }
+.card-line .declared { grid-column: 2; grid-row: 1 / span 2; font-size: 32px; }
+.tool-note { max-width: 70ch; margin-top: 24px; }
+@media (max-width: 959px) {
+  .calc { grid-template-columns: 1fr; gap: 24px; max-width: 680px; }
+  .calc-load, .warm { grid-column: 1; }
+  .calc-load { grid-row: 2; }
+  .calc .controls { grid-row: 1; }
+  .calc-bar .bar { max-height: 96px; }
+  .demo { grid-template-columns: 1fr; grid-template-areas: 'sets' 'inputs' 'judge' 'card'; gap: 24px; max-width: 680px; }
+  .c-rack .chips { grid-template-columns: repeat(7,minmax(0,1fr)); }
+}
+@media (max-width: 479px) {
+  .c-rack .chips { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .stepper { grid-template-columns: 44px minmax(0,1fr) 44px; }
+  .d-steppers { gap: 12px; }
+  .seg span { padding: 0 10px; }
+}
