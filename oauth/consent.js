@@ -75,6 +75,25 @@ function readable(err) {
   return err.message || "Something went wrong. Try again.";
 }
 
+// Where an approval sends access to the account: the host of the assistant's redirect address.
+// Anyone can register an assistant under any name and address, so the page leads with the
+// address, and the name is the assistant's own claim (security review of 2026-10-11).
+function destination(uri) {
+  let url;
+  try {
+    url = new URL(uri);
+  } catch {
+    return { label: "An unknown address", local: false };
+  }
+  if (url.protocol === "http:" || url.protocol === "https:") {
+    if (["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)) return { label: "An app on this device", local: true };
+    // Plain http shows its scheme: the approval would travel unencrypted.
+    return { label: url.protocol === "http:" ? `http://${url.hostname}` : url.hostname, local: false };
+  }
+  // An app's own link (cursor://, vscode://): its scheme and host name it.
+  return { label: url.host ? `${url.protocol}//${url.host}` : url.protocol.replace(/:$/, ""), local: false };
+}
+
 async function signedIn(newSession) {
   session = newSession;
   await loadRequest();
@@ -91,15 +110,15 @@ async function loadRequest() {
       return;
     }
     const client = details.client || {};
-    $("client-name").textContent = client.name || "An assistant";
-    let where = "";
-    try {
-      where = `Returns you to ${new URL(details.redirect_uri).host}.`;
-    } catch {
-      where = "";
-    }
-    if (client.uri) where += ` ${client.uri}`;
-    $("client-where").textContent = where.trim();
+    const to = destination(details.redirect_uri);
+    $("client-host").textContent = to.label;
+    // Direction controls could reorder the name's letters on screen; they go.
+    const name = typeof client.name === "string" ? client.name.replace(/[\u200E\u200F\u202A-\u202E\u2066-\u2069]/g, "").trim() : "";
+    const says = [];
+    if (name) says.push(`It gives its name as “${name}”. Block cannot confirm names.`);
+    if (!to.local) says.push("Allow only an address you know.");
+    $("client-name").textContent = says.join(" ");
+    $("client-name").hidden = says.length === 0;
     $("who").textContent = (details.user && details.user.email) || email;
     show("ask");
   } catch (err) {
@@ -125,11 +144,22 @@ async function decide(action) {
   }
 }
 
+// A return address that is a web or app address; never one that runs script on this page.
+function returnAddress(url) {
+  try {
+    const u = new URL(url);
+    return ["javascript:", "data:", "vbscript:", "file:", "blob:"].includes(u.protocol) ? null : u.href;
+  } catch {
+    return null;
+  }
+}
+
 function finish(url, text) {
-  $("done-text").textContent = text;
+  const to = url ? returnAddress(url) : null;
+  $("done-text").textContent = url && !to ? "Block does not open this assistant's return address. Go back to your assistant." : text;
   show("done");
   session = null;
-  if (url) location.assign(url);
+  if (to) location.assign(to);
 }
 
 $("email-form").addEventListener("submit", async (e) => {
