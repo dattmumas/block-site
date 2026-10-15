@@ -29,7 +29,7 @@
 </header>
 <main id="main" class="wrap">
 <header class="article-head"><h1 id="h-page">Privacy policy</h1>
-        <p class="effective">Effective October 4, 2026</p>
+        <p class="effective">Effective October 15, 2026</p>
         <p>Block is an iPhone app for logging strength training, operated by Matthew Dumas ("we"). This policy explains what the app collects, why, and the control you have over it. Contact: <a href="mailto:support@lnkd.world">support@lnkd.world</a>.</p></header>
 <div class="article-layout"><nav class="toc" aria-labelledby="h-toc">
         <h2 id="h-toc">On this page</h2>
@@ -58,7 +58,10 @@
                 <tr><th scope="row">Email address</th><td data-label="Source">You, or Sign in with Apple (you can choose Hide My Email)</td><td data-label="Purpose">Account sign-in, confirmation codes, password reset, support</td></tr>
                 <tr><th scope="row">Name</th><td data-label="Source">Sign in with Apple, if you share it, or Settings</td><td data-label="Purpose">Shown in Settings</td></tr>
                 <tr><th scope="row">Account ID</th><td data-label="Source">Created at sign-up</td><td data-label="Purpose">Links your data to your account</td></tr>
-                <tr><th scope="row">Sessions, sets, blocks, schedules, custom exercises</th><td data-label="Source">You, or tools you connect with an API key</td><td data-label="Purpose">The core function of the app: planned loads, judged sets, history, records and charts</td></tr>
+                <tr><th scope="row">Workouts, sessions, sets, notes, blocks, schedules, custom exercises</th><td data-label="Source">You, or tools you connect with an API key</td><td data-label="Purpose">The core function of the app: planned loads, judged sets, history, records and charts</td></tr>
+                <tr><th scope="row">About you: what you train for, your goal and its details, experience, days a week, session length, equipment, injuries and limits, lifts to favor or avoid, priority lifts or muscles, a meet date and notes</th><td data-label="Source">You, when you start and in About you, or a trainer proposal you apply</td><td data-label="Purpose">Suggests programs, and the trainer's plans and answers</td></tr>
+                <tr><th scope="row">The trainer's rules for you, and a note on each lift from the trainer and from you</th><td data-label="Source">The trainer, and you when you edit them</td><td data-label="Purpose">The trainer reads them with every answer; each lift's note shows with the lift</td></tr>
+                <tr><th scope="row">Feedback about the app: a summary, your words, the screen it is about, and the app and iOS versions</th><td data-label="Source">The trainer, when you tell it about a problem, an idea or praise for the app</td><td data-label="Purpose">We read it to fix problems and improve the app</td></tr>
                 <tr><th scope="row">Body measurements (weight, body fat, circumferences)</th><td data-label="Source">You, if you choose to enter them</td><td data-label="Purpose">Measurement history and trend charts</td></tr>
                 <tr><th scope="row">Settings (units, rest time, the plates and bars in your gym)</th><td data-label="Source">You</td><td data-label="Purpose">App behavior and plate math</td></tr>
                 <tr><th scope="row">Block Pro purchases: the plan, its renewal or end date, the App Store transaction ID, the free trial or offer code of the purchase, and the screen you bought it from</th><td data-label="Source">The App Store, when you subscribe or restore; the app, for the screen</td><td data-label="Purpose">Opens Block Pro on every device you sign in to, and for your API keys and connected assistants. We also count subscriptions per ad keyword, per offer code and per screen.</td></tr>
@@ -82,7 +85,7 @@
 
         <section id="who" aria-labelledby="h-who">
           <h2 id="h-who">Who can see it</h2>
-          <p>Only you. We share data only with service providers that run the app for us, and only as needed for that purpose:</p>
+          <p>Only you, except the feedback you send through the trainer, which we read. We share data only with service providers that run the app for us, and only as needed for that purpose:</p>
           <ul>
             <li>Supabase: database, authentication and server functions</li>
             <li>Resend: sends confirmation and password reset codes to your email address</li>
@@ -95,13 +98,14 @@
 
         <section id="trainer" aria-labelledby="h-trainer">
           <h2 id="h-trainer">The AI trainer</h2>
-          <p>With Block Pro on iOS 27, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block and your gym. It proposes changes, and they save only when you tap Apply, or Approve on a next target.</p>
+          <p>With Block Pro on iOS 27, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block, your gym, About you (including injuries and limits), its rules for you and each lift's notes. It proposes changes, and they save only when you tap Apply, or Approve on a next target.</p>
           <ul>
             <li>Apple Intelligence: when your iPhone supports it, the trainer answers with Apple's model on Private Cloud Compute. Apple processes the request to answer it and does not store it.</li>
             <li>Anthropic (Claude): when Apple's model is not available, the trainer can answer with Claude, and only after you allow it in the app. Your question and the training data the trainer needs go to Anthropic through our server. Your name, email and account details are not sent. Anthropic uses the data to answer and does not train its models on it, under its commercial terms. Anthropic deletes it within 30 days, unless it must keep it longer to enforce its usage policy or to comply with the law. You can take the permission back in Today &gt; Settings &gt; AI &gt; AI trainer.</li>
             <li>Your own Claude key: if you add your own Anthropic API key in Today &gt; Settings &gt; AI &gt; Your Claude key, the trainer answers with Claude first. The app sends your question and the training data the trainer needs straight to Anthropic with your key, under your own agreement with Anthropic. The key stays in your iPhone's Keychain. Our server never receives the key, your questions or the answers. Remove the key there at any time; deleting your account also removes it.</li>
           </ul>
-          <p>The chat stays on your iPhone, and deleting your account deletes it. Our server does not store your questions or the answers; it counts messages and tokens for the monthly allowance.</p>
+          <p>The chat stays on your iPhone, and deleting your account deletes it. Our server does not store your questions or the answers, except the feedback the trainer sends for you; it counts messages and tokens for the monthly allowance. The trainer's rules for you and its lift notes are stored with your account.</p>
+          <p>Send profile to Claude.ai (in Programs) copies a planning request with About you and opens Claude.ai. What you send there is under your own Claude account and Anthropic's privacy policy.</p>
         </section>
 
         <section id="assistants" aria-labelledby="h-assistants">
@@ -127,7 +131,7 @@
 
         <section id="health" aria-labelledby="h-health">
           <h2 id="h-health">Health information</h2>
-          <p>Block is a training log. It does not give medical advice and is not a medical device, and the trainer gives no diagnosis or treatment. We use your training and body data only to show it to you and, when you ask, for the trainer's answers.</p>
+          <p>Block is a training log. It does not give medical advice and is not a medical device, and the trainer gives no diagnosis or treatment. We use your training and body data, and what you enter in About you, only to show it to you, to suggest programs and, when you ask, for the trainer's answers.</p>
         </section>
 
         <section id="children" aria-labelledby="h-children">
