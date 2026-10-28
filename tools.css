@@ -1,4 +1,4 @@
-/* Interactive plate calculator and lamp demo. Loaded only by their two pages. */
+/* The interactive plate calculator. Loaded only by its page. */
 fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 legend { padding: 0; margin: 0 0 10px; }
 .field { display: grid; gap: 10px; }
@@ -56,29 +56,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .ladder .num { font-size: 24px; }
 .ladder .label { font-size: 12px; font-weight: 420; }
 .ladder .bar { width: 108px; }
-.lamps { --lamp: 32px; display: inline-flex; align-items: center; gap: 12px; padding: 16px; background: var(--iron); border-radius: 8px; vertical-align: middle; }
-.lamps.xs { --lamp: 8px; gap: 5px; padding: 7px 8px; border-radius: 5px; }
-.lamp { display: block; width: var(--lamp); height: var(--lamp); border-radius: 50%; background: white; flex: none; }
-.lamp.no { background: #ff453a; }
-.lamp.off { background: #535753; }
-.lamps .cell { display: grid; justify-items: center; gap: 10px; min-width: 48px; }
-.lamps .cell .label { color: #eee; font-size: 12px; }
-.lamps .cell.no .label { color: #ff918a; }
-.demo { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-areas: 'sets judge' 'inputs card'; gap: 32px 48px; }
-.d-sets { grid-area: sets; }
-.d-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
-.d-judge { grid-area: judge; display: grid; gap: 16px; align-content: start; justify-items: start; }
-.d-inputs { grid-area: inputs; display: grid; gap: 20px; align-content: start; }
-.d-card { grid-area: card; display: grid; gap: 16px; align-content: start; background: var(--board); padding: 24px; border: 1px solid var(--mortar); border-radius: 8px; }
-.d-steppers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.sets { font-size: 14px; }
-.sets th, .sets td { padding: 12px 8px 12px 0; }
-.sets .you { font-weight: 600; }
-.verdict { font-size: 36px; font-weight: 700; letter-spacing: -.03em; }
-.reasons { color: var(--reset); }
-.card-line { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; border-bottom: 1px solid var(--mortar); padding-bottom: 16px; }
-.card-line .why { grid-column: 1; font-size: 14px; color: var(--steel); }
-.card-line .declared { grid-column: 2; grid-row: 1 / span 2; font-size: 32px; }
 .tool-note { max-width: 70ch; margin-top: 24px; }
 @media (max-width: 959px) {
   .calc { grid-template-columns: 1fr; gap: 24px; max-width: 680px; }
@@ -86,12 +63,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .calc-load { grid-row: 2; }
   .calc .controls { grid-row: 1; }
   .calc-bar .bar { max-height: 96px; }
-  .demo { grid-template-columns: 1fr; grid-template-areas: 'sets' 'inputs' 'judge' 'card'; gap: 24px; max-width: 680px; }
   .c-rack .chips { grid-template-columns: repeat(7,minmax(0,1fr)); }
 }
 @media (max-width: 479px) {
   .c-rack .chips { grid-template-columns: repeat(4,minmax(0,1fr)); }
   .stepper { grid-template-columns: 44px minmax(0,1fr) 44px; }
-  .d-steppers { gap: 12px; }
   .seg span { padding: 0 10px; }
 }

@@ -10,30 +10,26 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/Archivo-VF.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/landing.css">
-<title>Lamps and next targets in Block</title>
-<meta name="description" content="Understand the three lamps for reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
+<title>Judging and next targets in Block</title>
+<meta name="description" content="See how each set is judged on reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
 <link rel="canonical" href="https://block.lnkd.world/progression/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Block">
-<meta property="og:title" content="Lamps and next targets in Block">
-<meta property="og:description" content="Understand the three lamps for reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
+<meta property="og:title" content="Judging and next targets in Block">
+<meta property="og:description" content="See how each set is judged on reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
 <meta property="og:url" content="https://block.lnkd.world/progression/">
 <meta property="og:image" content="https://block.lnkd.world/assets/og/progression.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Lamps and next targets in Block. Understand the three lamps for reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
+<meta property="og:image:alt" content="Judging and next targets in Block. See how each set is judged on reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lamps and next targets in Block">
-<meta name="twitter:description" content="Understand the three lamps for reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
+<meta name="twitter:title" content="Judging and next targets in Block">
+<meta name="twitter:description" content="See how each set is judged on reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
 <meta name="twitter:image" content="https://block.lnkd.world/assets/og/progression.png">
-<meta name="twitter:image:alt" content="Lamps and next targets in Block. Understand the three lamps for reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
+<meta name="twitter:image:alt" content="Judging and next targets in Block. See how each set is judged on reps, load, and effort. Review and approve the AI trainer’s next targets with Block Pro.">
 <!-- smart-app-banner -->
-<link rel="stylesheet" href="/tools.css">
 <script src="/config.js" defer></script>
 <script src="/site.js" defer></script>
-<script src="/assets/js/platemath.js" defer></script>
-<script src="/assets/js/judge.js" defer></script>
-<script src="/assets/js/progression.js" defer></script>
 </head>
 <body class="">
 <a class="skip" href="#main">Skip to content</a>
@@ -48,87 +44,9 @@
   </div>
 </header>
 <main id="main">
-  <header class="page-hero"><div class="wrap"><a class="breadcrumb" href="/support.html">Block help</a><div class="intro"><h1>Lamps and next targets</h1><p class="lead">See how each set compares with its targets. Review what to lift next.</p><div class="requirements"><span class="tag">Block Pro</span></div></div></div></header>
-  <section class="sec" id="lamps" aria-labelledby="h-lamps"><div class="wrap split"><div class="stack"><h2 id="h-lamps">Read the three lamps</h2><p>White is a pass. Red is a miss. One red lamp makes the set a no lift, and the reason shows on the set screen.</p><dl><dt><strong>Reps</strong></dt><dd>Passes when you reach the target reps, or the bottom of a rep range.</dd><dt><strong>Load</strong></dt><dd>Passes at the planned load or above. For assisted lifts, the planned assistance or less passes.</dd><dt><strong>Effort</strong></dt><dd>Passes at or under the lift's target RPE, which is 8 unless you set one. No RPE counts as a pass.</dd></dl></div><div class="stack"><h3>When a set is not judged</h3><p>Warm-ups, drop sets, prep lifts, and sets with no planned load or reps are not judged. Without Pro, you can log the same sets with no lamps.</p><p>Pending ranged sets show the full range. Logging without an edit uses its bottom, unless the session already has an explicit starting rep count. Skipped sets stay in session history, separate from completed work, and do not count toward volume, records or lamps.</p><h3>The estimated-max pass</h3><p>A weight-and-reps set that beats the target's estimated max passes reps and load together. The calculation is load × (1 + reps / 30). For example, 360 × 8 beats a target of 365 × 6.</p><p>The set screen starts effort at the lift's target RPE. Choose another number when the set was easier or harder.</p></div></div></section>
-  <section class="sec" id="try" aria-labelledby="h-try"><div class="wrap"><header class="sec-head"><h2 id="h-try">Try the lamps</h2><p class="lead">Change set 3 and see which targets it meets.</p></header><p class="fine" id="demo-static">The demo needs JavaScript. Three white lamps make a good lift. One red lamp makes a no lift.</p><div class="demo" id="demo" role="group" hidden aria-labelledby="h-try">
-        <div class="d-sets">
-          <div class="d-head">
-            <p class="label chalk">Back Squat, 3 × 8 at RPE 8</p>
-            <fieldset class="seg">
-              <legend class="sr-only">Unit</legend>
-              <label><input type="radio" name="d-unit" value="lb" checked><span>lb</span></label>
-              <label><input type="radio" name="d-unit" value="kg"><span>kg</span></label>
-            </fieldset>
-          </div>
-          <table class="sets">
-            <caption class="sr-only">The three sets of Back Squat</caption>
-            <thead><tr><th scope="col">Set</th><th scope="col">Lifted</th><th scope="col" class="end">Lamps</th></tr></thead>
-            <tbody>
-              <tr><td>1</td><td class="steel"><span data-planned>185</span> × 8 at RPE 7</td><td class="end"><span class="lamps xs" role="img" aria-label="Good lift"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
-              <tr><td>2</td><td class="steel"><span data-planned>185</span> × 8 at RPE 7</td><td class="end"><span class="lamps xs" role="img" aria-label="Good lift"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
-              <tr class="you"><td>3</td><td id="d-set3">185 × 8, no RPE</td><td class="end"><span class="lamps xs" id="d-set3-lamps" aria-hidden="true"><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span></span></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="d-judge">
-          <p class="label">Set 3 of 3</p>
-          <div class="lamps xl labeled lit" id="d-lamps" aria-hidden="true">
-            <span class="cell"><span class="lamp"></span><span class="label">Reps</span></span>
-            <span class="cell"><span class="lamp"></span><span class="label">Load</span></span>
-            <span class="cell"><span class="lamp"></span><span class="label">Effort</span></span>
-          </div>
-          <p class="verdict" id="d-verdict">Good lift</p>
-          <p class="label reasons" id="d-reasons" hidden></p>
-        </div>
-
-        <div class="d-inputs">
-          <h3 class="d-title">Log set 3</h3>
-          <div class="d-steppers">
-            <div class="field">
-              <label class="label" for="d-reps">Reps</label>
-              <div class="stepper">
-                <button type="button" data-reps-step="-1" aria-label="One rep less">−</button>
-                <input id="d-reps" type="number" inputmode="numeric" min="0" max="30" step="1" value="8">
-                <button type="button" data-reps-step="1" aria-label="One rep more">+</button>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label" for="d-load">Load, <span data-unit>lb</span></label>
-              <div class="stepper">
-                <button type="button" class="d-load-minus" data-load-step="-5" aria-label="Take off 5 lb">−</button>
-                <input id="d-load" type="number" inputmode="decimal" min="45" step="5" value="185">
-                <button type="button" class="d-load-plus" data-load-step="5" aria-label="Add 5 lb">+</button>
-              </div>
-            </div>
-          </div>
-          <fieldset class="field">
-            <legend class="label">RPE</legend>
-            <div class="seg rpe">
-              <label><input type="radio" name="d-rpe" value="" checked><span>None</span></label>
-              <label><input type="radio" name="d-rpe" value="6"><span>6</span></label>
-              <label><input type="radio" name="d-rpe" value="7"><span>7</span></label>
-              <label><input type="radio" name="d-rpe" value="8"><span>8</span></label>
-              <label><input type="radio" name="d-rpe" value="9"><span>9</span></label>
-              <label><input type="radio" name="d-rpe" value="10"><span>10</span></label>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="d-card">
-          <p class="label">Set 3 on the bar</p>
-          <div class="card-line">
-            <span class="heavy">Back Squat</span>
-            <span class="why" id="d-lifted">185 × 8, no RPE</span>
-            <div class="declared"><span class="num" id="d-shown">185</span></div>
-          </div>
-          <div class="bar-box" id="d-bar"></div>
-          <p class="label chalk" id="d-plates">45 + 25 per side</p>
-          <p class="fine">The trainer reads all three sets for the next targets. Until you approve them, the next session starts at the numbers you lifted with Block Pro, or at the workout's numbers without it.</p>
-        </div>
-        <p class="sr-only" aria-live="polite" id="d-status"></p>
-      </div></div></section>
-  <section class="sec" id="next" aria-labelledby="h-next"><div class="wrap split"><div class="stack" id="rules"><h2 id="h-next">Next targets from the trainer</h2><div class="requirements"><span class="tag">Block Pro</span><span class="tag">iOS 27</span></div><p>After you save a session, the AI trainer reads the loads, reps, effort, notes, rep ranges, and week of the block. It proposes each lift's next targets with a reason.</p><p>The trainer can add reps, add load, or hold when it gives a reason. It uses loads your gym can make. A deload week is marked on Today; the trainer proposes lighter numbers for that session only.</p><p>The lamps record what happened. They do not change a load by themselves.</p></div><div class="stack"><h3>Approve each lift</h3><p>Compare the current and proposed sets. Approve saves a line to the workout. Reject leaves it unchanged. Approve all and Reject all decide the lines that still wait. A hold needs no decision.</p><p id="unchanged"><span id="when">Until</span> you approve new targets, a Pro session starts at the numbers last lifted. Without Pro, it starts at the workout's numbers. Starting a session does not save new targets.</p><p><a href="/trainer/#next">Review next targets in the app</a></p><div class="cta" data-store="site-progression"><span class="soon">Coming soon to the App Store</span></div></div></div></section>
+  <header class="page-hero"><div class="wrap"><a class="breadcrumb" href="/support.html">Block help</a><div class="intro"><h1>Judging and next targets</h1><p class="lead">See how each set compares with its targets. Review what to lift next.</p><div class="requirements"><span class="tag">Block Pro</span></div></div></div></header>
+  <section class="sec" id="judging" aria-labelledby="h-judging"><div class="wrap split"><div class="stack"><h2 id="h-judging">How a set is judged</h2><p>A set with targets is judged on reps, load, and effort. A set that passes all three is a good lift. A miss on any of them shows the set red.</p><dl><dt><strong>Reps</strong></dt><dd>Passes when you reach the target reps, or the bottom of a rep range.</dd><dt><strong>Load</strong></dt><dd>Passes at the planned load or above. For assisted lifts, the planned assistance or less passes.</dd><dt><strong>Effort</strong></dt><dd>Passes at or under the lift's target RPE, which is 8 unless you set one. No RPE counts as a pass.</dd></dl></div><div class="stack"><h3>When a set is not judged</h3><p>Warm-ups, drop sets, prep lifts, and sets with no planned load or reps are not judged. Without Pro, you log the same sets and none is judged.</p><p>Pending ranged sets show the full range. Logging without an edit uses its bottom, unless the session already has an explicit starting rep count. Skipped sets stay in session history, separate from completed work, and do not count toward volume, records or good lifts.</p><h3>The estimated-max pass</h3><p>A weight-and-reps set that beats the target's estimated max passes reps and load together. The calculation is load × (1 + reps / 30). For example, 360 × 8 beats a target of 365 × 6.</p><p>The set screen starts effort at the lift's target RPE. Choose another number when the set was easier or harder.</p></div></div></section>
+  <section class="sec" id="next" aria-labelledby="h-next"><div class="wrap split"><div class="stack" id="rules"><h2 id="h-next">Next targets from the trainer</h2><div class="requirements"><span class="tag">Block Pro</span><span class="tag">iOS 27</span></div><p>After you save a session, the AI trainer reads the loads, reps, effort, notes, rep ranges, and week of the block. It proposes each lift's next targets with a reason.</p><p>The trainer can add reps, add load, or hold when it gives a reason. It uses loads your gym can make. A deload week is marked on Today; the trainer proposes lighter numbers for that session only.</p><p>Judging records what happened. It does not change a load by itself.</p></div><div class="stack"><h3>Approve each lift</h3><p>Compare the current and proposed sets. Approve saves a line to the workout. Reject leaves it unchanged. Approve all and Reject all decide the lines that still wait. A hold needs no decision.</p><p id="unchanged"><span id="when">Until</span> you approve new targets, a Pro session starts at the numbers last lifted. Without Pro, it starts at the workout's numbers. Starting a session does not save new targets.</p><p><a href="/trainer/#next">Review next targets in the app</a></p><div class="cta" data-store="site-progression"><span class="soon">Coming soon to the App Store</span></div></div></div></section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
