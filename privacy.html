@@ -29,7 +29,7 @@
 </header>
 <main id="main" class="wrap">
 <header class="article-head"><h1 id="h-page">Privacy policy</h1>
-        <p class="effective">Effective October 15, 2026</p>
+        <p class="effective">Effective November 16, 2026</p>
         <p>Block is an iPhone app for logging strength training, operated by Matthew Dumas ("we"). This policy explains what the app collects, why, and the control you have over it. Contact: <a href="mailto:support@lnkd.world">support@lnkd.world</a>.</p></header>
 <div class="article-layout"><nav class="toc" aria-labelledby="h-toc">
         <h2 id="h-toc">On this page</h2>
@@ -67,7 +67,7 @@
                 <tr><th scope="row">Block Pro purchases: the plan, its renewal or end date, the App Store transaction ID, the free trial or offer code of the purchase, and the screen you bought it from</th><td data-label="Source">The App Store, when you subscribe or restore; the app, for the screen</td><td data-label="Purpose">Opens Block Pro on every device you sign in to, and for your API keys and connected assistants. We also count subscriptions per ad keyword, per offer code and per screen.</td></tr>
                 <tr><th scope="row">Subscription interactions: views of the plans screen, the feature that opened it, and support options you select</th><td data-label="Source">The app and RevenueCat Customer Center</td><td data-label="Purpose">Purchase analytics and subscription support</td></tr>
                 <tr><th scope="row">Days of Block Pro for a new account: the day they start and the day they end</th><td data-label="Source">Our server, when a new account starts them</td><td data-label="Purpose">Opens Block Pro until the last day. We count how many new accounts lift, repeat a workout and subscribe.</td></tr>
-                <tr><th scope="row">Apple Ads attribution: whether one of our ads in the App Store led to your install, and if so, which ad</th><td data-label="Source">Apple, the first time you open the app (see Apple Ads)</td><td data-label="Purpose">Counts the free trials and subscriptions that each ad keyword brings</td></tr>
+                <tr><th scope="row">Apple Ads attribution: whether one of our ads in the App Store led to your install, and if so, which ad</th><td data-label="Source">Apple, the first time you open the app (see Apple Ads)</td><td data-label="Purpose">Counts the free trials, subscriptions and subscription revenue that each ad keyword brings</td></tr>
                 <tr><th scope="row">Trainer usage: how many trainer messages your account sent to Claude, when, and their size in tokens</th><td data-label="Source">Our server, when the trainer answers with Claude</td><td data-label="Purpose">The trainer's allowance: Block Pro's each month, or a new account's for its days of Pro. The questions and answers are not stored.</td></tr>
                 <tr><th scope="row">Connected assistants: which assistant you connected and when</th><td data-label="Source">Our sign-in service, when you tap Allow</td><td data-label="Purpose">Lets the assistant act for you until you revoke it</td></tr>
               </tbody>
@@ -75,7 +75,7 @@
           </div>
           <p>Apple processes the payment for Block Pro. We never receive your payment card or your Apple Account details.</p>
           <p>When a new account starts days of Block Pro, Block stores the start and end dates with the account. When you buy Block Pro, Block stores which screen you bought it from. Reminder notifications are made on your iPhone; nothing is sent for them. All of this is deleted with the account.</p>
-          <p>We do not collect location, contacts, photos, advertising identifiers or browsing history. The app has no ads, no analytics SDKs and no tracking. We do not sell or share your data for advertising.</p>
+          <p>We do not collect location, contacts, photos, advertising identifiers or browsing history. The app has no ads and no tracking. We do not sell or share your data for advertising.</p>
         </section>
 
         <section id="stored" aria-labelledby="h-stored">
@@ -90,7 +90,7 @@
             <li>Supabase: database, authentication and server functions</li>
             <li>Resend: sends confirmation and password reset codes to your email address</li>
             <li>Apple: Sign in with Apple, if you use it, and payments for Block Pro through the App Store</li>
-            <li>RevenueCat: verifies and manages Block Pro subscriptions. It receives your Block account ID, purchase and renewal history, views of the subscription plans screen, subscription support options you select, and app, operating system, locale and currency information. We use it for subscription support and purchase analytics. We do not send it your name, email, training data or advertising identifier.</li>
+            <li>RevenueCat: verifies and manages Block Pro subscriptions. It receives your Block account ID, your device's vendor identifier (an identifier Apple gives only to our apps; it is not an advertising identifier), purchase and renewal history, views of the subscription plans screen, subscription support options you select, an Apple Ads attribution token (see Apple Ads), and app, operating system, locale and currency information. We use it for subscription support and purchase analytics. We do not send it your name, email, training data or advertising identifier.</li>
             <li>Anthropic: answers the trainer's questions with Claude, only after you allow it or add your own Anthropic API key (see The AI trainer)</li>
           </ul>
           <p>We may disclose data if the law requires it.</p>
@@ -116,7 +116,7 @@
 
         <section id="ads" aria-labelledby="h-ads">
           <h2 id="h-ads">Apple Ads</h2>
-          <p>We show ads for Block in App Store search with Apple Ads. When you open the app for the first time, it gets an attribution token from Apple. The app sends this token to our server. Our server sends only this token to Apple. Apple answers with its attribution record. If you installed Block after you tapped or saw one of our ads, the record identifies that ad: the campaign, the ad group, the ad and the search keyword. It also gives the country or region of the campaign. If no ad of ours led to the install, the record says only that. We store the record with your account. We do not store the token. We use the record to count the free trials and subscriptions that each keyword brings. The record contains no advertising identifier. The app never reads one. Block does not track you, so the app does not ask for permission to track. Apple does not require that permission for this record. Deleting your account deletes the record.</p>
+          <p>We show ads for Block in App Store search with Apple Ads. When you open the app for the first time, it gets an attribution token from Apple. The app sends this token to our server. Our server sends only this token to Apple. Apple answers with its attribution record. If you installed Block after you tapped or saw one of our ads, the record identifies that ad: the campaign, the ad group, the ad and the search keyword. It also gives the country or region of the campaign. If no ad of ours led to the install, the record says only that. We store the record with your account. We do not store the token. The app also sends an attribution token to RevenueCat, which manages Block Pro subscriptions. RevenueCat asks Apple for the record and keeps it with your subscription profile. We use the record to count the free trials, subscriptions and subscription revenue that each keyword brings. The record contains no advertising identifier. The app never reads one. Block does not track you, so the app does not ask for permission to track. Apple does not require that permission for this record. Deleting your account deletes the record, ours and RevenueCat's.</p>
         </section>
 
         <section id="deletion" aria-labelledby="h-deletion">
