@@ -55,7 +55,7 @@
               <caption class="sr-only">What we collect, its source and its purpose</caption>
               <thead><tr><th scope="col">Data</th><th scope="col">Source</th><th scope="col">Purpose</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Email address</th><td data-label="Source">You, or Sign in with Apple (you can choose Hide My Email)</td><td data-label="Purpose">Account sign-in, confirmation codes, password reset, support</td></tr>
+                <tr><th scope="row">Email address</th><td data-label="Source">You, Sign in with Apple (you can choose Hide My Email) or Continue with Google</td><td data-label="Purpose">Account sign-in, confirmation codes, password reset, support</td></tr>
                 <tr><th scope="row">Name</th><td data-label="Source">Sign in with Apple, if you share it, or Settings</td><td data-label="Purpose">Shown in Settings</td></tr>
                 <tr><th scope="row">Account ID</th><td data-label="Source">Created at sign-up</td><td data-label="Purpose">Links your data to your account</td></tr>
                 <tr><th scope="row">Workouts, sessions, sets, notes, blocks, schedules, custom exercises</th><td data-label="Source">You, or tools you connect with an API key</td><td data-label="Purpose">The core function of the app: planned loads, judged sets, history, records and charts</td></tr>
@@ -85,24 +85,27 @@
 
         <section id="who" aria-labelledby="h-who">
           <h2 id="h-who">Who can see it</h2>
-          <p>Only you, except the feedback you send through the trainer, which we read. We share data only with service providers that run the app for us, and only as needed for that purpose:</p>
+          <p>You, and Block's developer. The developer can read your sessions and workouts, with their notes, to fix problems and to improve the app, and reads the feedback you send through the trainer.</p>
+          <p>We never sell your data. We give it to no one outside Block, except the service providers that run the app for us, and only as needed for that purpose:</p>
           <ul>
             <li>Supabase: database, authentication and server functions</li>
             <li>Resend: sends confirmation and password reset codes to your email address</li>
             <li>Apple: Sign in with Apple, if you use it, and payments for Block Pro through the App Store</li>
+            <li>Google: Continue with Google, if you use it</li>
             <li>RevenueCat: verifies and manages Block Pro subscriptions. It receives your Block account ID, your device's vendor identifier (an identifier Apple gives only to our apps; it is not an advertising identifier), purchase and renewal history, views of the subscription plans screen, subscription support options you select, an Apple Ads attribution token (see Apple Ads), and app, operating system, locale and currency information. We use it for subscription support and purchase analytics. We do not send it your name, email, training data or advertising identifier.</li>
-            <li>Anthropic: answers the trainer's questions with Claude, only after you allow it or add your own Anthropic API key (see The AI trainer)</li>
+            <li>Anthropic: answers the trainer's questions with Claude, only after you allow it (see The AI trainer)</li>
           </ul>
-          <p>We may disclose data if the law requires it.</p>
+          <p>If you add your own API key for the trainer, the app sends your questions and training data to the company your key is from. You choose that company; it is not our service provider (see The AI trainer).</p>
+          <p>Apart from these, your data goes only to a tool you connect yourself (see Connected assistants and API keys), or to an authority when the law requires it.</p>
         </section>
 
         <section id="trainer" aria-labelledby="h-trainer">
           <h2 id="h-trainer">The AI trainer</h2>
-          <p>With Block Pro on iOS 27, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block, your gym, About you (including injuries and limits), its rules for you and each lift's notes. The trainer's changes to your workouts and blocks save only when you tap Apply, and its next targets only when you tap Approve. A change you ask for during a session applies at once to the sets you have not logged, and the trainer saves its rules for you, lift notes and feedback at once.</p>
+          <p>With Block Pro, you can ask the trainer about your training. To answer, the trainer reads your training data in the app: sessions, workouts, loads, reps, RPE, your block, your gym, About you (including injuries and limits), its rules for you and each lift's notes. The trainer's changes to your workouts and blocks save only when you tap Apply, and its next targets only when you tap Approve. A change you ask for during a session applies at once to the sets you have not logged, and the trainer saves its rules for you, lift notes and feedback at once.</p>
           <ul>
             <li>Apple Intelligence: when Block and your iPhone support it, the trainer answers with Apple's model on Private Cloud Compute. Apple processes the request to answer it and does not store it. Block does not support it yet: the trainer answers with Claude.</li>
             <li>Anthropic (Claude): when Apple's model is not available, the trainer can answer with Claude, and only after you allow it in the app. Your question and the training data the trainer needs go to Anthropic through our server. Your name, email and account details are not sent. Anthropic uses the data to answer and does not train its models on it, under its commercial terms. Anthropic deletes it within 30 days, unless it must keep it longer to enforce its usage policy or to comply with the law. You can take the permission back in Today &gt; Settings &gt; AI &gt; AI trainer.</li>
-            <li>Your own Claude key: if you add your own Anthropic API key in Today &gt; Settings &gt; AI &gt; Your Claude key, the trainer answers with the Claude model you pick. The app sends your question and the training data the trainer needs straight to Anthropic with your key, under your own agreement with Anthropic. The key stays in your iPhone's Keychain. Our server never receives the key. It receives your questions and the answers only if you turn on Built-in trainer as backup: then a chat your key cannot answer goes through our server, as it does without a key. Remove the key there at any time; deleting your account also removes it.</li>
+            <li>Your own API key: in Today &gt; Settings &gt; AI &gt; Your API key, you can add your own API key from Anthropic, OpenAI, Google, xAI, Mistral, DeepSeek or OpenRouter. The trainer then answers with the model you pick. The app sends your question and the training data the trainer needs straight from your iPhone to that company with your key, under your own agreement with that company and its privacy policy. OpenRouter passes the request to a company that runs the model you pick. The key stays in your iPhone's Keychain. Our server never receives the key. It receives your questions and the answers only if you turn on Built-in trainer as backup: then a chat your key cannot answer goes through our server, as it does without a key. Remove the key there at any time; deleting your account also removes it.</li>
           </ul>
           <p>The chat stays on your iPhone, and deleting your account deletes it. Our server does not store your questions or the answers, except the feedback the trainer sends for you; it counts messages and tokens for the monthly allowance. The trainer's rules for you and its lift notes are stored with your account.</p>
           <p>Send profile to Claude.ai (in Programs) copies a planning request with About you and opens Claude.ai. What you send there is under your own Claude account and Anthropic's privacy policy.</p>
@@ -111,7 +114,7 @@
         <section id="assistants" aria-labelledby="h-assistants">
           <h2 id="h-assistants">Connected assistants and API keys</h2>
           <p>You can connect an AI assistant you already use, such as Claude or Gemini, by signing in with Block on our sign-in page and tapping Allow. The assistant then reads and changes your training data through Block's tools, as you. It cannot see your password, make API keys or delete your account. The data it receives is governed by that assistant's own privacy policy. See and revoke connections in Today &gt; Settings &gt; AI &gt; Assistants.</p>
-          <p>For scripts that call Block's API, you can create personal API keys in Today &gt; Settings &gt; AI &gt; API Keys. Anyone holding a key can read and change your training data, so share keys only with tools you trust. You can revoke a key at any time. We store only a one-way hash of each key.</p>
+          <p>For scripts that call Block's API, you can create personal API keys in Today &gt; Settings &gt; AI &gt; Block API keys. Anyone holding a key can read and change your training data, so share keys only with tools you trust. You can revoke a key at any time. We store only a one-way hash of each key.</p>
         </section>
 
         <section id="ads" aria-labelledby="h-ads">
@@ -131,7 +134,8 @@
 
         <section id="health" aria-labelledby="h-health">
           <h2 id="h-health">Health information</h2>
-          <p>Block is a training log. It does not give medical advice and is not a medical device, and the trainer gives no diagnosis or treatment. We use your training and body data, and what you enter in About you, only to show it to you, to suggest programs and, when you ask, for the trainer's answers.</p>
+          <p>Block is a training log. It does not give medical advice and is not a medical device, and the trainer gives no diagnosis or treatment. We use your training and body data, and what you enter in About you, only to show it to you, to suggest programs, for the trainer's answers when you ask and, for your sessions and workouts, to fix problems and improve the app.</p>
+          <p>Apple Health. With Sessions on in Settings, Block writes each session you finish on your iPhone to Apple Health as a workout: its start, its end, the time of each set and your effort. Block reads your heart rate and active energy for the time of that session to show them on it. Block does not store what it reads from Apple Health, does not send it to our server or to anyone, and does not use it for advertising. You can turn Sessions off in Settings at any time. What Block wrote stays in Apple Health until you delete it there.</p>
         </section>
 
         <section id="children" aria-labelledby="h-children">
